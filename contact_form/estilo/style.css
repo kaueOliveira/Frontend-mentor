@@ -1,0 +1,156 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: rgb(178, 204, 226);
+}
+
+#formulario {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    background-color: white;
+    margin: auto;
+    height: 460px;
+    width: 430px;
+    border-radius: 10px;
+    padding: 0px 15px 5px 15px;
+
+    transform: translate(-50%, -50%);
+
+    transition: width 0.3s, heigth 0.3s;
+    
+}
+
+div > h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.fn1 {
+    font-size: 12px;
+    display: inline-block; 
+    
+    transition: width 0.3s, heigth 0.3s;
+}
+
+.fn2 {
+    font-size: 12px;
+    display: inline-block;
+    
+    transition: width 0.3s, heigth 0.3s;
+}
+
+.fn3 {
+    font-size: 12px;
+    display: inline-block;
+
+    transition: width 0.3s, heigth 0.3s;
+}
+
+#full_name {
+    padding-top: 15px;
+}
+
+input[type="text"]{
+    border: 1px solid gray;
+    border-radius: 5px;
+    height: 28px;
+    width: 210px;
+    margin-top: 4px;
+    /*margin-right: 5px;*/
+
+    transition: width 0.3s, heigth 0.3s;
+}
+
+#e_mail{
+    padding-top: 15px;  
+}
+
+input[type="email"] {
+    border: 1px solid gray;
+    border-radius: 5px;
+    height: 28px;
+    width: 428px;
+    margin-top: 5px;
+    /*margin-right: 5px;*/
+
+    transition: width 0.3s, heigth 0.3s;
+}
+
+textarea {
+    resize: none;
+}
+
+#radio_section {
+    padding-top: 15px;    
+}
+
+legend {
+    font-size: 12px;
+}
+
+.rb {
+    border: 1px solid gray;
+    padding-left: 2px;
+    border-radius: 5px;
+    margin-top: 5px;
+    height: 28px;
+    width: 208px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    display:inline-block;
+
+    transition: width 0.3s, heigth 0.3s;
+}
+
+
+.rb > label {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    display:inline-block
+}
+
+#msgl {
+    font-size: 12px;
+    padding-top: 15px;
+}
+
+textarea {
+    border: 1px solid gray;
+    border-radius: 5px;
+    height: 65px;
+    width: 427px;
+    margin-top: 5px;
+}
+
+#check {
+    font-size: 12px;
+    margin-top: 10px;
+    padding-top: 15px;    
+}
+
+input[type="submit"] {
+    margin-top: 25px;
+    width: 430px;
+    height: 38px;
+    border: none;
+    border-radius: 5px;
+    background-color: #16878C;
+    color: white;
+    cursor: pointer;
+
+    transition: width 0.3s, heigth 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #0d4c50;
+}
+

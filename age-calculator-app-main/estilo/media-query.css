@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+@media screen and (min-width: 768px) {
+    main {
+        width: 650px;    
+    }
+
+    div#all {
+        justify-content: flex-start;
+    }
+
+    div.date {
+        margin-left: 35px;
+    }
+
+    input[type='number'] {
+        width: 110px;
+        height: 45px;
+    }
+
+    div#img {
+        justify-content: flex-end;
+        margin-right: 45px;
+    }
+
+    img {
+        width: 7%;
+        padding: 18px;
+    }
+
+    div#result {
+        font-size: 68px;
+        line-height: 0.95em;
+        margin-left: 40px;
+        margin-top: 10px;
+        margin-bottom: 50px;
+    }
+}

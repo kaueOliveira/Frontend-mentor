@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+@media screen and (min-width: 0px) and (max-width: 600px) {
+    #formulario {
+        width: 220px;
+        height: 600px;
+
+        transition: width 0.2s, heigth 0.3s;
+    }
+
+    .fn1 {
+        transition: width 0.2s, heigth 0.3s;  
+    }
+
+    .fn2 {
+        margin-top: 10px;
+
+        transition: width 0.2s, heigth 0.3s;
+    }
+
+    .fn {
+        transition: width 0.2s, heigth 0.3s;
+    }
+
+    input[type="email"] {
+        height: 28px;
+        width: 212px;
+        margin-top: 5px;
+
+        transition: width 0.2s, heigth 0.3s;
+    }
+
+    .rb {
+        margin-top: 8px;
+
+        transition: width 0.2s, heigth 0.3s;
+    }
+
+    textarea {
+        height: 100px;
+        width: 212px;
+
+        transition: width 0.2s, heigth 0.3s;
+    }
+
+    input[type="submit"] {
+        width: 212px;
+
+        transition: width 0.2s, heigth 0.3s;
+    }
+}

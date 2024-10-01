@@ -1,0 +1,77 @@
+@media screen and (min-width: 768px) {
+    main {
+        width: 510px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        margin-top: 50px;
+    }
+
+    header {
+        height: 230px;
+    }
+
+    header > img {
+       position: absolute;
+
+       top: 28%; 
+       left: 50%;
+
+       transform: translate(-50%, -50%);
+
+       width: 450px;
+       border-radius: 10px;
+    }
+
+    section.recipe {
+        margin: auto;
+        width: 440px;
+    }
+
+    section.recipe > p {
+        font-size: 0.80em;
+        line-height: 1.3em;
+    }
+
+    section.time {
+        width: 440px;
+    }
+
+    section.time > ul {
+        font-size: 0.78em;
+    }
+
+    h2 {
+        margin-left: 35px;
+    }
+
+    section > ul#list2 {
+        width: 395px;
+        margin-left: 55px;
+        font-size: 0.85em;
+    }
+
+    section > ol#list3 {
+        width: 385px;
+        margin-left: 55px;
+        font-size: 0.85em;
+        line-height: 1.3em;
+    }
+
+    section#nutri > h2 {
+        margin-left: 35px;    
+    }
+
+    section#nutri > p {
+        width: 450px;
+        margin-left: 35px;
+        font-size: 0.77em;
+    }
+
+    div.nutri {
+        width:450px;
+    }
+
+    div.attribution {
+        padding-bottom: 4px;
+    }
+}

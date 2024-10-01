@@ -1,0 +1,104 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../assets/fonts/Poppins-Bold.ttf') format('truetype');
+}
+
+:root {
+--Purple: hsl(259, 100%, 65%);
+--Light-red: hsl(0, 100%, 67%);
+
+--White: hsl(0, 0%, 100%);
+--Off_white: hsl(0, 0%, 94%);
+--Light_grey: hsl(0, 0%, 86%);
+--Smokey_grey: hsl(0, 1%, 44%);
+--Off_black: hsl(0, 0%, 8%);
+}
+
+body {
+    background-color: var(--Light_grey);
+}
+
+main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    background-color: var(--White);
+    margin: auto;
+    width: 400px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 10px 10px 80px 10px;
+}
+
+div#all {
+    display: flex;
+    flex-flow: row nowrap;
+
+    justify-content: space-evenly;
+
+}
+
+div.date {
+    margin-top: 40px;    
+} 
+
+div.date > label {
+    font-family: 'Poppins';
+    font-size: small;
+    font-weight: bolder;
+    color: var(--Smokey_grey);
+}
+
+input[type='number'] {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 19px;
+    width: 85px;
+    height: 40px;
+    margin-top: 4px;
+    border-radius: 5px;
+    border: 1px solid  var(--Smokey_grey);
+}
+
+img {
+    background-color: var(--Purple);
+    border-radius: 100%;
+    width: 5%;
+    padding: 17px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+div#img {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+div#result {
+    font-family: 'Poppins';
+    font-weight: bolder;
+    font-size: 58px;
+    line-height: 0.95em;
+    margin-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+span {
+    color: var(--Purple);;
+}
+
+.special_date {
+    border: 1px solid var(--Light-red) !important;
+}
+
+.special_date2 {
+    color: red !important;
+}

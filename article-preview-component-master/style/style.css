@@ -1,0 +1,84 @@
+* {
+    font-family: 'Manrope';
+    transition: 0.2s;
+}
+
+/* .manrope-font{
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+} */
+
+:root {
+--Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+--Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+--Grayish-Blue: hsl(212, 23%, 69%);
+--Light-Grayish-Blue: hsl(210, 46%, 95%);
+}
+  
+body {
+    background-color: var(--Grayish-Blue);
+}
+
+main {
+    background-color: var(--Light-Grayish-Blue);
+    width: 340px;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+header  {
+    width: 340px;
+    height: 240px;
+    margin-bottom: 25px;
+    border-radius: 10px 10px 0px 0px;
+
+    background-image: url('../images/drawers.jpg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+}
+
+article > p {
+    margin: auto;
+    width: 280px;
+    margin-bottom: 12px;
+}
+
+#a1 > p {
+    font-size: 1.05em;
+}
+
+#a2 > p {
+    color: var(--Desaturated-Dark-Blue);
+    font-size: 0.9em;
+}
+
+section {
+    width: 280px;
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section > img {
+    border-radius: 100%;
+    width: 40px;
+}
+
+img#img_share {
+    width: 25px;
+    height: 25px;
+    background-color:  hsla(212, 23%, 69%, 0.596);
+
+    cursor: pointer;
+}
+
+section > p {
+    font-size: 0.9em;   
+}

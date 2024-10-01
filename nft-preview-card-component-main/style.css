@@ -1,0 +1,137 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --Soft-blue: hsl(215, 51%, 70%);
+    --Cyan: hsl(178, 100%, 50%);
+
+    --Very-dark-blue1: hsl(217, 54%, 11%); /* (main BG) */
+    --Very-dark-blue2: hsl(216, 50%, 16%); /* (card BG) */
+    --Very-dark-blue3: hsl(215, 32%, 27%); /* (line) */
+    --White: hsl(0, 0%, 100%);
+}
+
+body {
+    background-color: var(--Very-dark-blue1);
+}
+
+main {
+    padding-top: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: var(--Very-dark-blue2);
+    border-radius: 20px;
+    margin: auto;
+    width: 360px;
+
+    box-shadow: rgba(0, 0, 0, 0.24) 10px 10px 10px;
+}
+
+#imagem > img {
+    border-radius: 10px;
+    width: 310px;
+    height: 290px;
+    display: block;
+    margin: auto;
+}
+
+section {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 310px;
+    height: 290px;
+}
+
+section:hover {
+    cursor: pointer;
+    background-image: url('images/icon-view.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+}
+
+
+#info1 > h1 {
+    color: white;
+    font-size: 1.65em;
+    margin: 25px 25px 20px 25px;
+}
+
+#info1 > p {
+    color: var(--Soft-blue);
+    font-size: 1.17em;
+    line-height: 28px;
+    margin: 0px 25px 22px 25px;
+}
+
+#info2 {
+    display: flex;
+    flex-flow:  wrap nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid var(--Soft-blue);
+
+    width: 325px;
+    padding-bottom: 20px;
+    margin: 22px;
+}
+
+#ethereum {
+    display: flex;
+    flex-flow:  wrap nowrap;
+    align-items: center;
+}
+
+#ethereum > p {
+    color: var(--Cyan);
+    margin-left: 10px;
+}
+
+#clock {
+    display: flex;
+    flex-flow:  wrap nowrap;
+    align-items: center;
+}
+
+#clock > p {
+    color: var(--Soft-blue);
+    margin-left: 10px;
+}
+
+#jules > img {
+    width: 45px;
+    border: 2px solid white;
+    border-radius: 100%;
+}
+
+#jules {
+    display: flex;
+    flex-flow:  wrap nowrap;
+    align-items: center;
+
+    margin: 2px 25px 20px 25px;
+}
+
+#jules > p {
+    color: var(--Soft-blue);
+    margin-left: 20px;
+}
+
+span {
+    color: var(--White);
+}
+
+span:hover {
+    cursor:pointer;
+}
