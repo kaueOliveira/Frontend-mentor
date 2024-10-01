@@ -21,6 +21,10 @@
         color: var(--Desaturated-Dark-Blue);
         font-size: 1.01em;
     }
+
+    .balao {
+        
+    }
 }
 
 @media screen and (min-width: 940px) {
@@ -69,13 +73,18 @@
     }
     
     img#img_share {
-        width: 40px;
+        width: 30px;
         height: 40px;
         background-color:  white;
-        border: 1px solid var(--Grayish-Blue);
+        
     }
     
     section > p {
         font-size: 1.4em;   
     }   
+
+    .balao {
+        top: 55%;
+        left: 78.2%;
+    }
 }

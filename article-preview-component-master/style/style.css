@@ -72,13 +72,54 @@ section > img {
 }
 
 img#img_share {
-    width: 25px;
-    height: 25px;
-    background-color:  hsla(212, 23%, 69%, 0.596);
-
+    width: 20px;
+    height: 35px;
+    background-color:  white;
     cursor: pointer;
 }
 
 section > p {
     font-size: 0.9em;   
+}
+
+.balao {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+    position: absolute;
+    background-color: var(--Very-Dark-Grayish-Blue); /* Cor do balão */
+    color: white;
+    border-radius: 10px;
+    max-width: 200px;
+    margin: 20px;
+    font-family: Arial, sans-serif;
+
+    overflow: hidden;
+    height: 0px;
+
+    top: 60%;
+    left: 50.1%;
+}
+
+.balao::after {
+    content: '';
+    position: absolute;
+    top: 100%; /* Coloca a ponta abaixo do balão */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajusta a posição para o centro */
+    border-width: 10px;
+    border-style: solid;
+    border-color:var(--Very-Dark-Grayish-Blue) transparent transparent transparent; /* Cor da ponta */
+}
+
+div.balao > p, img {
+    padding: 1px 10px;
+    margin: 10px 1px;
+}
+
+div.balao > p {
+    color: var(--Desaturated-Dark-Blue);
+    font-weight: bold;
 }
