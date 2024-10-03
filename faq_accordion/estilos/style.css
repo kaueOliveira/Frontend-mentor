@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Work Sans';
-    src: url('assets/fonts/WorkSans-VariableFont_wght.ttf') format('truetype');
+    src: url('/assets/fonts/WorkSans-VariableFont_wght.ttf') format('truetype');
     font-style: normal;
 }
 
@@ -22,7 +22,7 @@ body {
 }
 
 div#fundo { /* Imagem de Fundo */
-    background-image: url(assets/images/background-pattern-desktop.svg);
+    background-image: url(/assets/images/background-pattern-desktop.svg);
     height: 40vh;
 }
 
@@ -77,8 +77,18 @@ div#imagem > h1 {
     cursor: pointer;
 }
 
-div.add > p {
+div.div_inativa > p {
     color: var(--Grayish-purple);
     padding: 1px 20px 20px 30px;
     width: 350px; 
+}
+
+.div_inativa {
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+}
+
+.attribution {
+    padding-bottom: 2px;
 }
