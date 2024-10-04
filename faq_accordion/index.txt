@@ -1,0 +1,49 @@
+const botao = document.querySelectorAll(".btn");
+
+botao.forEach(btn => {
+    btn.addEventListener("click", (evt) => {
+        const elemento = evt.target;
+        const div_pai = elemento.parentNode.parentNode;
+        const contentDiv = div_pai.querySelector('.div_inativa');
+        const isITminus = elemento.src.includes('icon-minus.svg');
+
+        function Ocultar() {
+            elemento.src = 'assets/images/icon-plus.svg';
+            elemento.classList = 'btn_minus';
+            contentDiv.style.height = '0'; // Oculta o conteúdo
+        }
+
+        let ativo = document.getElementById("ativo");
+
+        function remover() {
+            let img = ativo.parentNode.children[0].children[1];
+            img.src = 'assets/images/icon-plus.svg';
+            ativo.style.height = '0';
+            ativo.removeAttribute('id');
+        }
+
+        if (isITminus) {
+            Ocultar();
+        } else {
+            if (ativo == null) {
+                elemento.src = 'assets/images/icon-minus.svg';
+                elemento.classList = 'btn';
+
+                // Define a altura da div para a altura real
+                const alturaReal = contentDiv.scrollHeight + "px"; // Calcula a altura real
+                contentDiv.style.height = alturaReal; 
+                contentDiv.id = "ativo";
+            } else {
+                remover();
+                elemento.src = 'assets/images/icon-minus.svg';
+                elemento.classList = 'btn';
+
+                const alturaReal = contentDiv.scrollHeight + "px"; // Calcula a altura real
+                contentDiv.style.height = alturaReal; 
+                contentDiv.id = "ativo";
+            }
+        }
+    });
+});
+
+teste ! 

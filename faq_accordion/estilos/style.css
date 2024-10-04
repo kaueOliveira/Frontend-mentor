@@ -31,7 +31,7 @@ div#principal {
     background-color: white;
     margin-top: 50px;
     border-radius: 10px;
-    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.39);
+    box-shadow: 10px 10px 40px 15px rgba(0, 0, 0, 0.123);
     width: 400px;
     
 
@@ -39,7 +39,9 @@ div#principal {
 
     left: 50%;
     top: 50%;
-    transform:translate(-50%, -50%);  
+    transform:translate(-50%, -50%);
+    
+    transition: width 0.3s, heigth 0.3s;
 }
 
 div#imagem {
@@ -86,7 +88,7 @@ div.div_inativa > p {
 .div_inativa {
     height: 0;
     overflow: hidden;
-    transition: all 0.3s ease-out;
+    /* transition: height 0.3s ease;; */
 }
 
 .attribution {
