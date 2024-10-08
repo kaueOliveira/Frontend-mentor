@@ -1,0 +1,133 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('/assets/fonts/Inter-VariableFont_slnt,wght.ttf') format('truetype');
+    font-style: normal;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Inter';
+}
+
+:root {
+    --Soft-orange: hsl(35, 77%, 62%);
+    --Soft-red: hsl(5, 85%, 63%);
+    
+    --Off-white: hsl(36, 100%, 99%);
+    --Grayish-blue: hsl(233, 8%, 79%);
+    --Dark-grayish-blue: hsl(236, 13%, 42%);
+    --Very-dark-blue: hsl(240, 100%, 5%);
+}
+
+header > img {
+    width: 53px;
+    margin: 20px 50px;
+}
+
+/* Section One */
+
+section#section_1 {
+    text-align: center;
+}
+
+section#section_1 > img {
+    height: 350px;
+    width: 375px;
+}
+
+section#section_1 > h1 {
+    width: 300px;
+    margin: 20px 53px;
+    font-size: 2.6em;
+    line-height: 0.95em;
+    text-align: left !important;
+}
+
+section#section_1 > p {
+    color: var(--Dark-grayish-blue);
+    width: 375px;
+    margin: 25px 53px 35px 53px;
+    font-size: 1em;
+    line-height: 1.5em;
+    text-align: left !important;
+}
+
+section#section_1 > a {
+    color: var(--Very-dark-blue);
+    background-color: var(--Soft-red);
+    padding: 15px 25px;
+    font-size: 0.9em;
+    letter-spacing: 2px;
+    border-radius: 1px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Section Two */
+
+section#section_2 {
+    background-color: var(--Very-dark-blue);
+    margin: auto;
+    margin-top: 50px;
+    width: 375px;
+}
+
+section#section_2 > h1 {
+    color: var(--Soft-orange);
+    font-size: 2.2em;
+    font-weight: 600;
+    margin: 25px 15px 25px 15px;
+    padding-top: 15px;
+}
+
+section#section_2 > h2 {
+    color: var(--Off-white);
+    font-size: 1.35em;
+    margin: 25px 15px 0px 15px;
+}
+
+section#section_2 > p {
+    color: var(--Grayish-blue);
+    margin: 5px 15px 35px 15px;
+    padding-bottom: 25px;
+    line-height: 1.7em;
+}
+
+.line {
+    border-bottom:  1px solid var(--Dark-grayish-blue);
+}
+
+/* Section Three */
+
+#section_3 {
+    margin-left: 53px;
+}
+
+#section_3 > .div_main {
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+div.image > img {
+    width: 120px;
+    height: 150px;
+    margin-right: 15px;
+}
+
+div.text > h1 {
+    color: var(--Soft-red);
+    font-size: 2.4em;
+}
+
+div.text > h2 {
+   font-size: 1.4em;
+   margin: 15px 0px;
+}
+
+div.text > p {
+    color: var(--Dark-grayish-blue);
+    width: 240px;
+    line-height: 1.6em;
+}
