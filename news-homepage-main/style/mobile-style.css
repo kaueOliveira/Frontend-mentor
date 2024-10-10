@@ -20,9 +20,60 @@
     --Very-dark-blue: hsl(240, 100%, 5%);
 }
 
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 header > img {
     width: 53px;
     margin: 20px 50px;
+}
+
+img#menu {
+    cursor: pointer;
+    height: 18px;
+    width: 45px;
+}
+
+header > nav {
+    position: absolute;
+    height: 500px;
+    width: 0px;
+    overflow: hidden;
+    border: none;
+
+    top: 0%;
+    left: 100%;
+    background-color: aliceblue;
+
+    transition: all 0.4s;
+}
+
+nav > img#menu_close {
+    cursor: pointer;
+    height: 35px;
+    width: 35px;
+    
+    margin: 20px 20px 50px 78%;
+}
+
+nav > p {
+    display: flex;
+    flex-flow: column;
+}
+
+nav > p > a {
+    color: var(--Very-dark-blue);
+    margin: 12px 12px 12px 20px;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+nav > p > a:hover {
+    color: var(--Grayish-blue);
 }
 
 /* Section One */
@@ -62,6 +113,10 @@ section#section_1 > a {
     border-radius: 1px;
     font-weight: bold;
     text-decoration: none;
+}
+
+section#section_1 > a:hover {
+    background-color: var(--Soft-orange);
 }
 
 /* Section Two */
