@@ -73,7 +73,7 @@ nav > p > a {
 }
 
 nav > p > a:hover {
-    color: var(--Grayish-blue);
+    color: var(--Soft-orange);
 }
 
 /* Section One */
@@ -87,7 +87,7 @@ section#section_1 > img {
     width: 375px;
 }
 
-section#section_1 > h1 {
+section#section_1 h1 {
     width: 300px;
     margin: 20px 53px;
     font-size: 2.6em;
@@ -95,7 +95,7 @@ section#section_1 > h1 {
     text-align: left !important;
 }
 
-section#section_1 > p {
+section#section_1  p {
     color: var(--Dark-grayish-blue);
     width: 375px;
     margin: 25px 53px 35px 53px;
@@ -104,7 +104,7 @@ section#section_1 > p {
     text-align: left !important;
 }
 
-section#section_1 > a {
+section#section_1  a {
     color: var(--Very-dark-blue);
     background-color: var(--Soft-red);
     padding: 15px 25px;
@@ -115,8 +115,9 @@ section#section_1 > a {
     text-decoration: none;
 }
 
-section#section_1 > a:hover {
-    background-color: var(--Soft-orange);
+section#section_1  a:hover {
+    background-color: var(--Very-dark-blue);
+    color: var(--Off-white);
 }
 
 /* Section Two */
@@ -132,8 +133,8 @@ section#section_2 > h1 {
     color: var(--Soft-orange);
     font-size: 2.2em;
     font-weight: 600;
-    margin: 25px 15px 25px 15px;
-    padding-top: 15px;
+    margin: 20px 15px 25px 15px;
+    padding-top: 5px;
 }
 
 section#section_2 > h2 {
@@ -145,7 +146,7 @@ section#section_2 > h2 {
 section#section_2 > p {
     color: var(--Grayish-blue);
     margin: 5px 15px 35px 15px;
-    padding-bottom: 25px;
+    padding-bottom: 10px;
     line-height: 1.7em;
 }
 
