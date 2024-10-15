@@ -1,19 +1,24 @@
  @media screen and (min-width: 518px) { /* NoteBook */
 
     body {
-        width: 1150px;
+        width: 1097px;
         margin: auto;
     }
 
     header {
         display: flex;
-        width: 1085px;
+        width: 1095px;
+    }
+
+    header > img {
+        width: 53px;
+        margin: 20px 0px;
     }
 
     header > nav {
         position: relative;
-        width: 480px;
-        height: 40px;
+        width: auto;
+        height: 50px;
         overflow: visible;
         top: inherit;
         left: inherit;
@@ -24,6 +29,10 @@
     nav > p {
         display: flex;
         flex-flow: row;
+    }
+
+    nav > p > a {
+        margin: 15px 0px 15px 30px;
     }
 
     /* MAIN */
@@ -37,50 +46,50 @@
     /* Section One */
 
     #section_1 {
-        margin: 0px 20px 0px 50px;
+         margin: 0px 25px 0px 0px; /* 20 50 */
     }
 
     section#section_1 > img {
-        height: 290px;
-        width: 650px;
+        height: 290px; /*290*/
+        width: 710px; /*650*/
 
         margin-bottom: 0px !important;
-        margin-left: 3px;
     }
 
     div#texto {
         display: flex;
         flex-flow: row wrap;
-        
+        justify-content: flex-start;
 
-        width: 650px;
-        height: 185px;
+        width: 710px; /*650*/
+        height: 185px; /*185*/
     }
 
     section#section_1  h1 {
-        width: 250px;
-        font-size: 2.8em;
+        width: 260px;
+        font-size: 3.0em;
         font-weight: 900;
         line-height: 1.1em;
-        margin: 20px 5px;
+        margin: 20px 0px 20px 0px;
     }
 
     section#section_1 p {
-        margin: 20px 5px;
+        margin: 20px 0px 20px 85px;
+        line-height: 1.72em; 
     }
 
     section#section_1  a {
         margin: 0px;
-        
     }
 
     /* Section Two */
 
     #section_2 {
         height: 480px;
-        width: 350px !important;
-        margin: 0px 10px !important;
+        width: 348px !important;
+        margin: 0px 0px 0px 10px !important;
 
+        border: 1px solid green;
     }
 
     section#section_2 > p {
@@ -91,19 +100,21 @@
     /* Section Three */
 
     #section_3 {
-        margin: 30px 50px;
+        width: 1095px;
+        margin: 30px 0px;
         display: flex;
     }
 
     .div_main {
-        margin-bottom: -20px !important;
+        margin-bottom: -25px !important;
     }
 
     div.image > img {
         width: 95px;
         height: 120px;
 
-        margin-left: 8px;
+        margin-left:0px;
+        margin-right: 25px;
     }
 
     div.text > h1 {
@@ -118,8 +129,12 @@
     
     div.text > p {
         color: var(--Dark-grayish-blue);
-        width: 220px;
-        font-size: 0.8em;
-        line-height: 1.6em;
+        width: 230px;
+        font-size: 0.85em;
+        line-height: 1.7em;
+    }
+
+    div.one {
+        margin-left: 22px;
     }
 }
