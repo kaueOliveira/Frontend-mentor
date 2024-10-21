@@ -3,7 +3,15 @@ const btn_close = document.getElementById("menu_close")
 const nav = document.getElementById("nav")
 
 window.addEventListener("load", (evt)=>{
-    if (window.innerWidth > "500") {
+    if (window.innerWidth > "1199") {
+        nav.childNodes[1].remove()
+        nav.parentNode.childNodes[3].remove()
+    }
+})    
+
+window.addEventListener("resize", (evt)=>{
+    location.reload();
+    if (window.innerWidth > "1199") {
         nav.childNodes[1].remove()
         nav.parentNode.childNodes[3].remove()
     } 
@@ -21,5 +29,5 @@ btn_close.addEventListener("click", (evt)=>{
     nav.style.width = "0px"
     nav.style.overflow = "hidden"
     nav.style.border = "none"
-
 })
+
