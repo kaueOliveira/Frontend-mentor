@@ -1,5 +1,5 @@
 
-@media screen and (min-width: 1200px) { /* width minimo -> 1024px*/
+@media screen and (min-width: 1200px) { 
 
     body {
         position: absolute !important;
@@ -15,7 +15,6 @@
         width: 74.9vw;
         height: 5.5vw;
         margin-bottom: 0.5vw;
-        border: 1px solid green; 
     }
 
     header > nav {

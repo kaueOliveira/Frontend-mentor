@@ -42,7 +42,7 @@ img#menu {
 
 header > nav {
     position: absolute;
-    height: 500px;
+    height: auto;
     width: 0px;
     overflow: hidden;
     border: none;
@@ -70,8 +70,8 @@ nav > p {
 
 nav > p > a {
     color: var(--Very-dark-blue);
-    margin: 12px 10px 12px 20px;
-    font-size: 1.1em;
+    margin: 1vw 10px 8vw 4vw;
+    font-size: clamp(15px, 4vw, 1.6em);
     font-weight: 500;
     text-decoration: none;
 }
@@ -152,21 +152,28 @@ section#section_2 > h2 {
     color: var(--Off-white);
     font-size: 1.35em;
     margin: 25px 15px 0px 15px;
+    width: 95%;
 }
 
 section#section_2 > p {
     color: var(--Grayish-blue);
-    margin: 5px 15px 35px 15px;
+    margin: 5px 15px 5px 15px;
     padding-bottom: 10px;
     line-height: 1.7em;
 }
 
 section#section_2 > h2:nth-of-type(2) {
     border-top:  1px solid var(--Dark-grayish-blue);
+    padding-top: 25px;
 } 
 
 #section_2 > h2:nth-of-type(3) {
     border-top:  1px solid var(--Dark-grayish-blue);
+    padding-top: 25px;
+}
+
+#section_2 > p:nth-of-type(3) {
+    padding-bottom: 25px;
 }
 
 /* Section Three */

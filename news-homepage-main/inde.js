@@ -18,8 +18,8 @@ window.addEventListener("resize", (evt)=>{
 })
 
 btn_e.addEventListener("click", (evt)=>{
-    nav.style.left = "47%"
-    nav.style.width = "250px"
+    nav.style.left = "48%"
+    nav.style.width = "50vw"
     nav.style.overflow = "visible"
     nav.style.border = "1px solid var(--Dark-grayish-blue)"
 })
