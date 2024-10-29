@@ -1,0 +1,181 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --Red: hsl(0, 100%, 66%);
+
+    --White: hsl(0, 0%, 100%);
+    --Light-grayish-violet: hsl(270, 3%, 87%);
+    --Dark-grayish-violet: hsl(279, 6%, 55%);
+    --Very-dark-violet: hsl(278, 68%, 11%);
+
+    --Linear-gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+}
+
+main {
+    background: url(/images/bg-main-mobile.png);
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-size: cover;
+    height: 61.5vw;
+}
+
+section { /*Temporário*/
+    height: 300px;
+}
+
+#card_front {
+    position: absolute;
+    background-image: url('/images/bg-card-front.png'); 
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-size: cover;
+    height: 145px;
+    width: 280px;
+    border-radius: 10px;
+    color: var(--Light-grayish-violet);
+
+    top: 30%;
+    left: 43%;
+
+    transform: translate(-50%, -50%);
+    z-index: 2;
+
+    box-shadow: 5px 40px 100px rgba(0, 0, 0, 0.308);
+}
+
+#card_front > img {
+    width: 55px;
+    margin: 15px 20px;
+}
+
+#card_front > p {
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: 100;
+    letter-spacing: 1.5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#card_front > div {
+    width: 230px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+#info > p {
+    font-size: 0.68em;
+}
+
+#card_back {
+    position: absolute;
+    background-image: url('/images/bg-card-back.png'); 
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-size: cover;
+    height: 145px;
+    width: 280px;
+    border-radius: 10px;
+    color: var(--Light-grayish-violet);
+
+    top: 17.5%;
+    left: 57%;
+
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+#card_back > p {
+    position: absolute;
+    text-align: right;
+    font-size: 0.8em;
+    top: 43.5%;
+    left: 80%;
+}
+
+form {
+    margin: auto;
+    width: 90%;
+}
+
+form > div {
+    margin-left: 15px;
+}
+
+label {
+    color: var(--Very-dark-violet);
+    font-size: 0.9em;
+    font-weight: 550;
+}
+
+#name_number input{
+    width: 95%;
+    height: 10vw;
+    border-radius: 5px;
+    border: 1px solid var(--Light-grayish-violet);
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-left: 15px;
+    font-size: 0.97em;
+}
+
+input::placeholder{
+    font-weight: 700;
+    color: var(--Light-grayish-violet);
+}
+
+#date_cvc {
+    display: flex;
+}
+
+#date_cvc > p:nth-of-type(1) {
+    width: 90%;
+}
+
+#date_cvc input {
+    width: 35%;
+    height: 10vw;
+    border-radius: 5px;
+    border: 1px solid var(--Light-grayish-violet);
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-left: 15px;
+    font-size: 1.0em;
+}
+
+#date_cvc > p:nth-of-type(2) input {
+    width: 85%;
+}
+
+button {
+    width: 85%;
+    margin-top: 15px;
+    margin-left: 35px;
+    height: 11vw;
+    border: none;
+    border-radius: 5px;
+    color: var(--Light-grayish-violet);
+    font-size: 1em;
+    background-color: var(--Very-dark-violet);
+    cursor: pointer;
+}
+
+.error {
+    border: 1px solid var(--Red) !important;
+
+}
+
+.msg_e {
+    color: red;
+    font-weight: 500;
+    font-size: 0.8em;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    margin-right: 6px;
+    
+}
