@@ -1,7 +1,7 @@
 *{
     margin: 0px;
     padding: 0px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Space Grotesk", sans-serif;
 }
 
 :root {
@@ -20,7 +20,7 @@ main {
     background-repeat: no-repeat;
     background-position: center left;
     background-size: cover;
-    height: 61.5vw;
+    height: 230px; 
 }
 
 section { /*Temporário*/
@@ -33,9 +33,11 @@ section { /*Temporário*/
     background-repeat: no-repeat;
     background-position: center left;
     background-size: cover;
+    /* height: 38vw;  */
     height: 145px;
+    /* width: 73%;  */
     width: 280px;
-    border-radius: 10px;
+    border-radius: 5px;
     color: var(--Light-grayish-violet);
 
     top: 30%;
@@ -48,13 +50,13 @@ section { /*Temporário*/
 }
 
 #card_front > img {
-    width: 55px;
+    width: 50px;
     margin: 15px 20px;
 }
 
 #card_front > p {
     text-align: center;
-    font-size: 1.3em;
+    font-size: 1.25em;
     font-weight: 100;
     letter-spacing: 1.5px;
     margin-top: 10px;
@@ -78,9 +80,11 @@ section { /*Temporário*/
     background-repeat: no-repeat;
     background-position: center left;
     background-size: cover;
+    /* height: 38vw; 
+    width: 73%;  */
     height: 145px;
     width: 280px;
-    border-radius: 10px;
+    border-radius: 5px;
     color: var(--Light-grayish-violet);
 
     top: 17.5%;
@@ -99,26 +103,23 @@ section { /*Temporário*/
 }
 
 form {
-    margin: auto;
     width: 90%;
-}
-
-form > div {
-    margin-left: 15px;
+    margin-left: 35px;
 }
 
 label {
     color: var(--Very-dark-violet);
     font-size: 0.9em;
     font-weight: 550;
+    margin-right: 27px;
 }
 
-#name_number input{
-    width: 95%;
+input{
+    width: 86%;
     height: 10vw;
     border-radius: 5px;
     border: 1px solid var(--Light-grayish-violet);
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     margin-top: 10px;
     padding-left: 15px;
     font-size: 0.97em;
@@ -131,32 +132,23 @@ input::placeholder{
 
 #date_cvc {
     display: flex;
+    /* width: 98%; */
+    width: 330px;
 }
 
-#date_cvc > p:nth-of-type(1) {
-    width: 90%;
+#date_cvc > div {
+    margin-right: 20px;
 }
 
-#date_cvc input {
-    width: 35%;
-    height: 10vw;
-    border-radius: 5px;
-    border: 1px solid var(--Light-grayish-violet);
-    margin-bottom: 10px;
-    margin-top: 10px;
-    padding-left: 15px;
-    font-size: 1.0em;
+#date_cvc > div:nth-child(1), #date_cvc > div:nth-child(2) {
+    width: 25%;
+    /* width: 80px; */
 }
-
-#date_cvc > p:nth-of-type(2) input {
-    width: 85%;
-}
-
+ 
 button {
-    width: 85%;
-    margin-top: 15px;
-    margin-left: 35px;
-    height: 11vw;
+    width: 82%;
+    height: 40px;
+    margin: 15px 0px 10px 35px;
     border: none;
     border-radius: 5px;
     color: var(--Light-grayish-violet);
@@ -165,17 +157,30 @@ button {
     cursor: pointer;
 }
 
+button:hover {
+    background-color:  hsl(278, 94%, 30%);
+    transition-duration: 0.4s;
+}
+
+/* JavaScript */
+
 .error {
     border: 1px solid var(--Red) !important;
-
 }
 
 .msg_e {
     color: red;
     font-weight: 500;
     font-size: 0.8em;
-    margin-top: -5px;
-    margin-bottom: 10px;
-    margin-right: 6px;
-    
+    margin: -20px 0px 2px 0px;
+}
+
+
+div#comp_state {
+    text-align: center;
+}
+
+div#comp_state > img, div#comp_state h1, div#comp_state p {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
