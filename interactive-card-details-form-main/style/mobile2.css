@@ -15,14 +15,16 @@
     --Linear-gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
 }
 
-section { 
+main {
     background: url(/images/bg-main-mobile.png);
     background-repeat: no-repeat;
     background-position: center left;
     background-size: cover;
-    height: 63vw;
-    margin-bottom: 85px;
-    margin-bottom: 20vw;
+    height: 230px; 
+}
+
+section { /*Temporário*/
+    height: 300px;
 }
 
 #card_front {
@@ -31,42 +33,43 @@ section {
     background-repeat: no-repeat;
     background-position: center left;
     background-size: cover;
-    height: 40vw; 
-    width: 75vw; 
+    height: 145px;
+    width: 280px;
     border-radius: 5px;
     color: var(--Light-grayish-violet);
 
-    top: 54vw;
-    left: 43vw;
+    top: 30%;
+    left: 43%;
 
     transform: translate(-50%, -50%);
     z-index: 2;
 
-    box-shadow: 5px 40px 100px rgba(0, 0, 0, 0.192);
+    box-shadow: 5px 40px 100px rgba(0, 0, 0, 0.308);
 }
 
 #card_front > img {
-    width: 12vw;
-    margin: 5vw;
+    width: 50px;
+    margin: 15px 20px;
 }
 
 #card_front > p {
     text-align: center;
-    font-size: clamp(0px, 5.3vw, 1000px);
+    font-size: 1.25em;
     font-weight: 100;
-    letter-spacing: 0.5vw;
-    margin: 2.5vw 0px;
+    letter-spacing: 1.5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #card_front > div {
-    width: 65vw;
+    width: 245px;
     margin: auto;
     display: flex;
     justify-content: space-between;
 }
 
 #info > p {
-    font-size: clamp(0px, 2.8vw, 1000px);
+    font-size: 0.68em;
 }
 
 #card_back {
@@ -75,13 +78,15 @@ section {
     background-repeat: no-repeat;
     background-position: center left;
     background-size: cover;
-    height: 40vw; 
-    width: 75vw; 
+    /* height: 38vw; 
+    width: 73%;  */
+    height: 145px;
+    width: 280px;
     border-radius: 5px;
     color: var(--Light-grayish-violet);
 
-    top: 31.5vw;
-    left: 58vw;
+    top: 17.5%;
+    left: 57%;
 
     transform: translate(-50%, -50%);
     z-index: 1;
@@ -90,31 +95,32 @@ section {
 #card_back > p {
     position: absolute;
     text-align: right;
-    font-size: clamp(0px, 2.8vw, 1000px);
-    top: 44.5%;
+    font-size: 0.8em;
+    top: 43.5%;
     left: 80%;
 }
 
 form {
-    width: 85vw;
-    margin-left: 8vw;
+    width: 90%;
+    margin-left: 35px;
 }
 
 label {
     color: var(--Very-dark-violet);
-    font-size: 4vw;
+    font-size: 0.9em;
     font-weight: 550;
-    margin-right: 4vw;
+    margin-right: 27px;
 }
 
 input{
-    width: 80vw;
+    width: 86%;
     height: 10vw;
-    font-size: 0.97em;
-    margin: 10px 0px 20px 0px;
-    padding-left: 15px;
     border-radius: 5px;
     border: 1px solid var(--Light-grayish-violet);
+    margin-bottom: 20px;
+    margin-top: 10px;
+    padding-left: 15px;
+    font-size: 0.97em;
 }
 
 input::placeholder{
@@ -124,35 +130,29 @@ input::placeholder{
 
 #date_cvc {
     display: flex;
-    /* width: 85vw; */
+    width: 98%;
+    /* width: 330px; */
 }
 
 #date_cvc > div {
-    margin-right: 1.5vw;
+    margin-right: 20px;
 }
 
-#date_cvc > div:nth-child(1) > input {
-    width: 13vw;
-}
-
-#date_cvc > div:nth-child(2) > input {
-    width: 13vw;
-}
-
-#date_cvc > div:nth-child(3) > input {
-    width: 42vw;
+#date_cvc > div:nth-child(1), #date_cvc > div:nth-child(2) {
+    width: 25%;
+    /* width: 80px; */
 }
  
 button {
-    width: 84.5vw;
+    width: 82%;
     height: 40px;
-    cursor: pointer;
+    margin: 15px 0px 10px 35px;
     border: none;
-    margin: 2vw 0vw 0vw 8vw;
-    font-size: 1em;
     border-radius: 5px;
     color: var(--Light-grayish-violet);
+    font-size: 1em;
     background-color: var(--Very-dark-violet);
+    cursor: pointer;
 }
 
 button:hover {
