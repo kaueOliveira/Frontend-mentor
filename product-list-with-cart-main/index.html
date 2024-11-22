@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="style/mobile.css">
   <title>Frontend Mentor | Product list with cart</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -16,59 +16,95 @@
 </head>
 <body>
 
-  Desserts
+  
+  <main>
+    <section>
+      <h1>Desserts</h1>
+    
+      <div class="item">
+        <div id="waffle_img"></div>
+        <p class="category">Waffle</p>
+        <p class="name">Waffle with Berries</p>
+        <p class="price">$6.50</p>
+        <div class="btn_add"><img src="assets/images/icon-add-to-cart.svg" alt="add to cart icon">Add to Cart</div>
+      </div>
 
-  Waffle with Berries
-  Waffle
-  6.50
-  Add to Cart
+      <div class="item">
+        <div id="brulee_img"></div>
+        <p class="category">Crème Brûlée</p>
+        <p class="name">Vanilla Bean Crème Brûlée</p>
+        <p class="price">$7.00</p>
+        <div class="btn_add"><img src="assets/images/icon-add-to-cart.svg" alt="add to cart icon">Add to Cart</div>
+      </div>
 
-  Vanilla Bean Crème Brûlée
-  Crème Brûlée
-  7.00
-  Add to Cart
+      <div class="item">
+        <div id="macaron_img"></div>
+        <p class="category">Macaron</p>
+        <p class="name">Macaron Mix of Five</p>
+        <p class="price">$8.00</p>
+        <div class="btn_add"><img src="assets/images/icon-add-to-cart.svg" alt="add to cart icon">Add to Cart</div>
+      </div>
 
-  Macaron Mix of Five
-  Macaron
-  8.00
-  Add to Cart
+      <div class="item">
+        <div id="tiramisu_img"></div>
+        <p class="category">Tiramisu</p>
+        <p class="name">Classic Tiramisu</p>
+        <p class="price">$5.50</p>
+        <div class="btn_add"><img src="assets/images/icon-add-to-cart.svg" alt="add to cart icon">Add to Cart</div>
+      </div>
 
-  Classic Tiramisu
-  Tiramisu
-  5.50
-  Add to Cart
+      <div class="item">
+        <div id="baklava_img"></div>
+        <p class="category">Baklava</p>
+        <p class="name">Pistachio Baklava</p>
+        <p class="price">$4.00</p>
+        <div class="btn_add"><img src="assets/images/icon-add-to-cart.svg" alt="add to cart icon">Add to Cart</div>
+      </div>
 
-  Pistachio Baklava
-  Baklava
-  4.00
-  Add to Cart
+      <div class="item">
+        <div id="meringue_img"></div>
+        <p class="category">Pie</p>
+        <p class="name">Lemon Meringue Pie</p>
+        <p class="price">$5.00</p>
+        <div class="btn_add"><img src="assets/images/icon-add-to-cart.svg" alt="add to cart icon">Add to Cart</div>
+      </div>
 
-  Lemon Meringue Pie
-  Pie
-  5.00
-  Add to Cart
+      <div class="item">
+        <div id="redVelt_img"></div>
+        <p class="category">Cake</p>
+        <p class="name">Red Velvet Cake</p>
+        <p class="price">$4.50</p>
+        <div class="btn_add"><img src="assets/images/icon-add-to-cart.svg" alt="add to cart icon">Add to Cart</div>
+      </div>
 
-  Red Velvet Cake
-  Cake
-  4.50
-  Add to Cart
+      <div class="item">
+        <div id="brownie_img"></div>
+        <p class="category">Brownie</p>
+        <p class="name">Salted Caramel Brownie</p>
+        <p class="price">$4.50</p>
+        <div class="btn_add"><img src="assets/images/icon-add-to-cart.svg" alt="add to cart icon">Add to Cart</div>
+      </div>
 
-  Salted Caramel Brownie
-  Brownie
-  4.50
-  Add to Cart
+      <div class="item">
+        <div id="pannaCotta_img"></div>
+        <p class="category">Panna Cotta</p>
+        <p class="name">Vanilla Panna Cotta</p>
+        <p class="price">$6.50</p>
+        <div class="btn_add"><img src="assets/images/icon-add-to-cart.svg" alt="add to cart icon">Add to Cart</div>
+      </div>
 
-  Vanilla Panna Cotta
-  Panna Cotta
-  6.50
-  Add to Cart
+    </section>
 
-  Your Cart (<!-- Quantity -->)
-  Your added items will appear here
+    <section>
+      <h1>Your Cart (0<!-- Quantity -->)</h1>
+      <div></div> 
+      <p>Your added items will appear here</p>
+    </section>
+  </main>
 
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/kaueOliveira">Kauê Oliveira</a>.
   </div>
 </body>
 </html>

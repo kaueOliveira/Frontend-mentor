@@ -102,7 +102,7 @@ form {
 
 label {
     color: var(--Very-dark-violet);
-    font-size: 4vw;
+    font-size: 3.8vw;
     font-weight: 550;
     margin-right: 4vw;
 }
@@ -110,7 +110,7 @@ label {
 input{
     width: 80vw;
     height: 10vw;
-    font-size: 0.97em;
+    font-size: 3.2vw;
     margin: 10px 0px 20px 0px;
     padding-left: 15px;
     border-radius: 5px;
@@ -124,7 +124,6 @@ input::placeholder{
 
 #date_cvc {
     display: flex;
-    /* width: 85vw; */
 }
 
 #date_cvc > div {
