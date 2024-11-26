@@ -85,7 +85,8 @@ p.price {
 
 div.btn_add:hover {
     cursor: pointer;
-    background-color: var(--Rose-100);
+    border: 1px solid var(--Red);
+    color: var(--Red);
 }
 
 div#waffle_img {
@@ -163,7 +164,7 @@ div#pannaCotta_img {
 section:nth-of-type(2) {
     margin: 70px auto;
     width: 325px;
-    background-color: white;
+    background-color: var(--Rose-100);
 }
 
 section:nth-of-type(2) > h1 {
@@ -174,7 +175,7 @@ section:nth-of-type(2) > h1 {
     color: var(--Red);
 }
 
-section:nth-of-type(2) > div {
+section:nth-of-type(2) > div.cart_empty {
     background: var(--Rose-100) url('../assets/images/illustration-empty-cart.svg') no-repeat center / contain;
     border-radius: 10px;
     width: 200px;
@@ -234,4 +235,44 @@ img.btn_quant:hover {
 
 .selected {
     border: 3px solid var(--Red);
+    transition: 0.15s;
+}
+
+section.filled {
+    
+}
+
+section.filled > h1 {
+    margin: 10px 0px 0px 32px;  
+    font-size: 1.8em;
+    font-weight: 670;
+
+    color: var(--Red);
+}
+
+.filled > section {
+    margin-left: 32px;
+    width: 280px;
+    border: 1px solid red;
+}
+
+.filled > section > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filled > section  h1 {
+    font-size: 1.2em;
+}
+
+.filled img {
+    border-radius: 60%;
+    padding: 2px;
+    width: 12px;
+    height: 12px;
+    border: 1px solid var(--Rose-400);
+}
+
+.filled img:hover {
+    cursor: pointer;
 }

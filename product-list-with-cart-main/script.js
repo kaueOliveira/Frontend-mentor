@@ -1,4 +1,17 @@
 const btn = document.querySelectorAll(".btn_add");
+const cart = document.getElementsByTagName("section")[1]
+
+const items = [
+    {name: "Waffle with Berries", price: 6.50},
+    {name: "Vanilla Bean Crème Brûlée", price: 7.00},
+    {name: "Macaron Mix of Five", price: 8.00},
+    {name: "Classic Tiramisu", price: 5.50},
+    {name: "Pistachio Baklava", price: 4.00},
+    {name: "Lemon Meringue Pie", price: 5.00},
+    {name: "Red Velvet Cake", price: 4.50},
+    {name: "Salted Caramel Brownie", price: 4.50},
+    {name: "Vanilla Panna Cotta", price: 6.50},
+]
 
 btn.forEach( b => {
     let quantity = 0
@@ -31,6 +44,8 @@ btn.forEach( b => {
 
             img_product.classList.add("selected") // Borda ao redor da imagem
 
+            //Removendo e Adicionando itens
+
             img_decrement.addEventListener("click", () => {
                 quantity--
                 b.childNodes[1].nodeValue = quantity
@@ -39,10 +54,17 @@ btn.forEach( b => {
             img_increment.addEventListener("click", () => {
                 quantity++
                 b.childNodes[1].nodeValue = quantity
+
+                // const item_order = document.createElement("div")
+                // const paragraph = document.createElement
+
+                cart.children[1].remove(), cart.children[1].remove()
+
+                cart.appendChild(item_order)
             });
         } 
 
-        if (quantity === 0) {
+        if (quantity === 0) { //Voltando o botão ao padrão. 
             b.classList.remove("btn_order");
             b.classList.add("btn_add");
             b.innerHTML = " ";
@@ -52,4 +74,4 @@ btn.forEach( b => {
             img_product.classList.remove("selected")
         };
     })
-})     
+}) 
