@@ -1,5 +1,8 @@
 const btn = document.querySelectorAll(".btn_add");
-const cart = document.getElementsByTagName("section")[1]
+//const main = document.getElementsByTagName("main")[0]
+const section_empty = document.getElementById("empty")
+const msg_quantity = section_empty.getElementsByTagName("h1")[0]
+console.log(msg_quantity)
 
 const items = [
     {name: "Waffle with Berries", price: 6.50},
@@ -12,6 +15,8 @@ const items = [
     {name: "Salted Caramel Brownie", price: 4.50},
     {name: "Vanilla Panna Cotta", price: 6.50},
 ]
+let has_msg_empty = true
+let quantidade_items_carrinho = 0
 
 btn.forEach( b => {
     let quantity = 0
@@ -44,23 +49,84 @@ btn.forEach( b => {
 
             img_product.classList.add("selected") // Borda ao redor da imagem
 
-            //Removendo e Adicionando itens
+            // Adicionando no Carrinho
+                let nome_item_escolhido = b.parentNode.children[2].innerHTML
+                
+                let preco_item_escolhido =  b.parentNode.children[3].innerHTML
 
+                items.forEach(i => {
+
+                if(i.name === nome_item_escolhido) {
+                    nome_item_escolhido = i.name
+                    preco_item_escolhido = i.price
+                }
+
+                })
+
+                // Remove o carrinho vazio
+                if (has_msg_empty) {
+                    section_empty.children[1].remove(), section_empty.children[1].remove()
+                    has_msg_empty = false
+                }
+            
+                // Cria a seção do item
+                const itemSection = document.createElement("section");
+                itemSection.className = "kaue";
+            
+                const itemHeader = document.createElement("div");
+            
+                const itemTitle = document.createElement("h1");
+                itemTitle.textContent = nome_item_escolhido;
+            
+                const removeIcon = document.createElement("img");
+                removeIcon.src = "assets/images/icon-remove-item.svg";
+                removeIcon.alt = "";
+                removeIcon.id = "remove";
+            
+                itemHeader.appendChild(itemTitle);
+                itemHeader.appendChild(removeIcon);
+            
+                const itemDetails = document.createElement("div");
+            
+                const itemQuantity = document.createElement("p");
+                itemQuantity.id = "amount"
+                itemQuantity.textContent = quantity + "x";
+            
+                const itemPrice = document.createElement("p");
+                itemPrice.id = "price"
+                itemPrice.textContent = "@ $"+preco_item_escolhido;
+            
+                const itemTotal = document.createElement("p");
+                itemTotal.textContent = "$" + quantity * preco_item_escolhido;
+                itemTotal.id = "total"
+            
+                itemDetails.appendChild(itemQuantity);
+                itemDetails.appendChild(itemPrice);
+                itemDetails.appendChild(itemTotal);
+            
+                itemSection.appendChild(itemHeader);
+                itemSection.appendChild(itemDetails);
+        
+                section_empty.appendChild(itemSection);
+                quantidade_items_carrinho ++
+                msg_quantity.innerHTML = `Your Cart (${quantidade_items_carrinho})`
+                
+            //Removendo e Adicionando itens
             img_decrement.addEventListener("click", () => {
                 quantity--
                 b.childNodes[1].nodeValue = quantity
+                itemQuantity.textContent = quantity + "x";
+                itemTotal.textContent = "$" + quantity * preco_item_escolhido;
+                if (quantity === 0) {
+                    itemSection.remove()
+                }
             });
 
             img_increment.addEventListener("click", () => {
                 quantity++
                 b.childNodes[1].nodeValue = quantity
-
-                // const item_order = document.createElement("div")
-                // const paragraph = document.createElement
-
-                cart.children[1].remove(), cart.children[1].remove()
-
-                cart.appendChild(item_order)
+                itemQuantity.textContent = quantity + "x";
+                itemTotal.textContent = "$" + quantity * preco_item_escolhido;
             });
         } 
 
@@ -72,6 +138,72 @@ btn.forEach( b => {
             b.append(" Add to Cart");
 
             img_product.classList.remove("selected")
+            quantidade_items_carrinho--
+            msg_quantity.innerHTML = `Your Cart (${quantidade_items_carrinho})`
         };
+
+        if (quantidade_items_carrinho === 0) {
+            cart_empty ()
+            has_msg_empty = true
+        }
     })
 }) 
+
+// Mudar nome das variaveis p/ inglês
+//verificar classes e ids do html (nome tem que fazer sentido)
+
+function cart_empty () {
+
+    const div_cart_empty = document.createElement("div")
+    div_cart_empty.className = "cart_empty"
+
+    const p_empty = document.createElement("p")
+    p_empty.textContent = "Your added items will appear here"
+
+    section_empty.appendChild(div_cart_empty)
+    section_empty.appendChild(p_empty)
+}
+
+function criando_pedido () {
+    // Cria a seção do item
+    const itemSection = document.createElement("section");
+    itemSection.className = "kaue";
+
+    const itemHeader = document.createElement("div");
+
+    const itemTitle = document.createElement("h1");
+    itemTitle.textContent = nome_item_escolhido;
+
+    const removeIcon = document.createElement("img");
+    removeIcon.src = "assets/images/icon-remove-item.svg";
+    removeIcon.alt = "";
+    removeIcon.id = "remove";
+
+    itemHeader.appendChild(itemTitle);
+    itemHeader.appendChild(removeIcon);
+
+    const itemDetails = document.createElement("div");
+
+    const itemQuantity = document.createElement("p");
+    itemQuantity.id = "amount"
+    itemQuantity.textContent = quantity + "x";
+
+    const itemPrice = document.createElement("p");
+    itemPrice.id = ""
+    itemPrice.textContent = "@ $"+preco_item_escolhido;
+
+    const itemTotal = document.createElement("p");
+    itemTotal.textContent = "$" + quantity * preco_item_escolhido;
+
+    itemDetails.appendChild(itemQuantity);
+    itemDetails.appendChild(itemPrice);
+    itemDetails.appendChild(itemTotal);
+
+    itemSection.appendChild(itemHeader);
+    itemSection.appendChild(itemDetails);
+
+    section_empty.appendChild(itemSection);
+
+    quantidade_items_carrinho ++
+    msg_quantity.innerHTML = `Your Cart (${quantidade_items_carrinho})`
+}

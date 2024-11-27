@@ -7,6 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="style/mobile.css">
   <link rel="stylesheet" href="style/media-query.css">
+  <link rel="stylesheet" href="style/estilo-script.css">
   <title>Frontend Mentor | Product list with cart</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -16,10 +17,8 @@
   </style>
 </head>
 <body>
-
-  
   <main>
-    <section>
+    <section id="first">
       <h1>Desserts</h1>
     
       <div class="item">
@@ -96,28 +95,27 @@
 
     </section>
 
-    <!-- <section class="empty">
+    <section id="empty"> <!-- id="cart"-->
       <h1>Your Cart (0)</h1>
       <div class="cart_empty"></div> 
       <p>Your added items will appear here</p>
-    </section> -->
+    </section>
 
-    <section class="filled">
-      <h1>Your Cart (0<!-- Quantity -->)</h1>
-      <section>
+    <!-- <section class="empty">
+      <h1>Your Cart (0)</h1>
+      <section class="kaue">
             <div>
               <h1>Classic Tiramisu</h1>
-              <img src="assets/images/icon-remove-item.svg" alt="">
+              <img src="assets/images/icon-remove-item.svg" alt="" id="remove">
             </div>
             <div>
-              <p>1x</p>
-              <p>@ $5.50</p>
-              <p>$5.50</p>
+              <p id="amount">1x</p>
+              <p id="price">@ $5.50</p>
+              <p id="total">$5.50</p>
             </div>
       </section>
-    </section>
-  </main>
-
+    </section>-->
+  </main> 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
     Coded by <a href="https://github.com/kaueOliveira" target="_blank">Kauê Oliveira</a>.
