@@ -161,13 +161,13 @@ div#pannaCotta_img {
     margin: auto;
 }
 
-section#empty {
+section#cart {
     margin: 70px auto;
     width: 325px;
     background-color: var(--Rose-100);
 }
 
-section#empty > h1 {
+section#cart > h1 {
     margin: 10px 0px 0px 32px;  
     font-size: 1.8em;
     font-weight: 670;
@@ -175,7 +175,7 @@ section#empty > h1 {
     color: var(--Red);
 }
 
-section#empty > div.cart_empty {
+section#cart > div.cart_empty {
     background: var(--Rose-100) url('../assets/images/illustration-empty-cart.svg') no-repeat center / contain;
     border-radius: 10px;
     width: 200px;
@@ -183,23 +183,21 @@ section#empty > div.cart_empty {
     margin: 30px auto;  
 }
 
-section#empty > p {
+section#cart > p {
     margin: auto;
     width: max-content;
     color: gray;
     font-weight: 600;
 }
 
-/* Mudar apenas o background das divs img, os outros atributos se repetem   
+ /* Mudar apenas o background das divs img, os outros atributos se repetem    */
 
-.item > div:first-child {
+/* .item > div:first-child {
     border-radius: 10px;
     width: 325px;
     height: 250px;
     margin: auto;
-    }
-
-*/
+} */
 
 /* Script */
 
@@ -238,7 +236,7 @@ img.btn_quant:hover {
     transition: 0.15s;
 }
 
-section.empty > h1 {
+section#cart > h1 {
     margin: 10px 0px 0px 32px;  
     font-size: 1.8em;
     font-weight: 670;
@@ -246,29 +244,29 @@ section.empty > h1 {
     color: var(--Red);
 }
 
-#empty > section {
+#cart > section {
     margin-left: 32px;
     margin-top: 15px;
     width: 280px;
     /* border: 1px solid red; */
 }
 
-#empty > section > div {
+#cart > section > div {
     display: flex;
     justify-content: space-between;
 }
 
-section.kaue > div:nth-of-type(2) {
+section.order > div:nth-of-type(2) {
     width: 150px;
 }
 
 
-#empty > section  h1 {
+#cart > section  h1 {
     font-size: 1.0em;
     margin-bottom: 5px;
 }
 
-#empty img {
+#cart img {
     border-radius: 60%;
     padding: 2px;
     width: 12px;
@@ -276,7 +274,7 @@ section.kaue > div:nth-of-type(2) {
     border: 1px solid var(--Rose-400);
 }
 
-#empty img:hover {
+#cart img:hover {
     cursor: pointer;
 }
 

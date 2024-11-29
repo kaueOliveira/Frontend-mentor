@@ -1,8 +1,7 @@
 const btn = document.querySelectorAll(".btn_add");
 //const main = document.getElementsByTagName("main")[0]
-const section_empty = document.getElementById("empty")
-const msg_quantity = section_empty.getElementsByTagName("h1")[0]
-console.log(msg_quantity)
+const section_cart = document.getElementById("cart")
+const msg_quantity = section_cart.getElementsByTagName("h1")[0]
 
 const items = [
     {name: "Waffle with Berries", price: 6.50},
@@ -15,8 +14,12 @@ const items = [
     {name: "Salted Caramel Brownie", price: 4.50},
     {name: "Vanilla Panna Cotta", price: 6.50},
 ]
+
+let pedido_total = []
+let pedido_total2 = 0
+
 let has_msg_empty = true
-let quantidade_items_carrinho = 0
+let quantity_items_cart = 0
 
 btn.forEach( b => {
     let quantity = 0
@@ -50,37 +53,37 @@ btn.forEach( b => {
             img_product.classList.add("selected") // Borda ao redor da imagem
 
             // Adicionando no Carrinho
-                let nome_item_escolhido = b.parentNode.children[2].innerHTML
+                let chosen_item_name = b.parentNode.children[2].innerHTML
                 
-                let preco_item_escolhido =  b.parentNode.children[3].innerHTML
-
+                let chosen_item_price =  b.parentNode.children[3].innerHTML
+                
                 items.forEach(i => {
 
-                if(i.name === nome_item_escolhido) {
-                    nome_item_escolhido = i.name
-                    preco_item_escolhido = i.price
+                if(i.name === chosen_item_name) {
+                    chosen_item_name = i.name
+                    chosen_item_price = i.price
                 }
 
                 })
 
                 // Remove o carrinho vazio
                 if (has_msg_empty) {
-                    section_empty.children[1].remove(), section_empty.children[1].remove()
+                    section_cart.children[1].remove(), section_cart.children[1].remove()
                     has_msg_empty = false
                 }
             
                 // Cria a seção do item
                 const itemSection = document.createElement("section");
-                itemSection.className = "kaue";
+                itemSection.className = "order";
             
                 const itemHeader = document.createElement("div");
             
                 const itemTitle = document.createElement("h1");
-                itemTitle.textContent = nome_item_escolhido;
+                itemTitle.textContent = chosen_item_name;
             
                 const removeIcon = document.createElement("img");
                 removeIcon.src = "assets/images/icon-remove-item.svg";
-                removeIcon.alt = "";
+                removeIcon.alt = "icon remove item";
                 removeIcon.id = "remove";
             
                 itemHeader.appendChild(itemTitle);
@@ -94,10 +97,10 @@ btn.forEach( b => {
             
                 const itemPrice = document.createElement("p");
                 itemPrice.id = "price"
-                itemPrice.textContent = "@ $"+preco_item_escolhido;
+                itemPrice.textContent = "@ $"+ chosen_item_price;
             
-                const itemTotal = document.createElement("p");
-                itemTotal.textContent = "$" + quantity * preco_item_escolhido;
+                const itemTotal = document.createElement("p"); 
+                itemTotal.textContent = "$" + quantity * chosen_item_price;
                 itemTotal.id = "total"
             
                 itemDetails.appendChild(itemQuantity);
@@ -107,16 +110,25 @@ btn.forEach( b => {
                 itemSection.appendChild(itemHeader);
                 itemSection.appendChild(itemDetails);
         
-                section_empty.appendChild(itemSection);
-                quantidade_items_carrinho ++
-                msg_quantity.innerHTML = `Your Cart (${quantidade_items_carrinho})`
+                section_cart.appendChild(itemSection);
+                quantity_items_cart++
+                msg_quantity.innerHTML = `Your Cart (${quantity_items_cart})`
+
+                // pedido_total.push(quantity * chosen_item_price)
+                
+                pedido_total2 += quantity * chosen_item_price
+                console.log(pedido_total2)
+
                 
             //Removendo e Adicionando itens
             img_decrement.addEventListener("click", () => {
                 quantity--
                 b.childNodes[1].nodeValue = quantity
                 itemQuantity.textContent = quantity + "x";
-                itemTotal.textContent = "$" + quantity * preco_item_escolhido;
+                itemTotal.textContent = "$" + quantity * chosen_item_price;
+                pedido_total2 = pedido_total2 - chosen_item_price 
+                console.log(pedido_total2)
+
                 if (quantity === 0) {
                     itemSection.remove()
                 }
@@ -126,7 +138,10 @@ btn.forEach( b => {
                 quantity++
                 b.childNodes[1].nodeValue = quantity
                 itemQuantity.textContent = quantity + "x";
-                itemTotal.textContent = "$" + quantity * preco_item_escolhido;
+                itemTotal.textContent = "$" + quantity * chosen_item_price;
+                //pedido_total.push(chosen_item_price)
+                pedido_total2 += chosen_item_price
+                console.log(pedido_total2)
             });
         } 
 
@@ -138,11 +153,11 @@ btn.forEach( b => {
             b.append(" Add to Cart");
 
             img_product.classList.remove("selected")
-            quantidade_items_carrinho--
-            msg_quantity.innerHTML = `Your Cart (${quantidade_items_carrinho})`
+            quantity_items_cart--
+            msg_quantity.innerHTML = `Your Cart (${quantity_items_cart})`
         };
 
-        if (quantidade_items_carrinho === 0) {
+        if (quantity_items_cart === 0) {
             cart_empty ()
             has_msg_empty = true
         }
@@ -160,19 +175,19 @@ function cart_empty () {
     const p_empty = document.createElement("p")
     p_empty.textContent = "Your added items will appear here"
 
-    section_empty.appendChild(div_cart_empty)
-    section_empty.appendChild(p_empty)
+    section_cart.appendChild(div_cart_empty)
+    section_cart.appendChild(p_empty)
 }
 
 function criando_pedido () {
     // Cria a seção do item
     const itemSection = document.createElement("section");
-    itemSection.className = "kaue";
+    itemSection.className = "order";
 
     const itemHeader = document.createElement("div");
 
     const itemTitle = document.createElement("h1");
-    itemTitle.textContent = nome_item_escolhido;
+    itemTitle.textContent = chosen_item_name;
 
     const removeIcon = document.createElement("img");
     removeIcon.src = "assets/images/icon-remove-item.svg";
@@ -189,11 +204,11 @@ function criando_pedido () {
     itemQuantity.textContent = quantity + "x";
 
     const itemPrice = document.createElement("p");
-    itemPrice.id = ""
-    itemPrice.textContent = "@ $"+preco_item_escolhido;
+    itemPrice.id = "price"
+    itemPrice.textContent = "@ $"+ chosen_item_price;
 
     const itemTotal = document.createElement("p");
-    itemTotal.textContent = "$" + quantity * preco_item_escolhido;
+    itemTotal.textContent = "$" + quantity * chosen_item_price;
 
     itemDetails.appendChild(itemQuantity);
     itemDetails.appendChild(itemPrice);
@@ -202,8 +217,18 @@ function criando_pedido () {
     itemSection.appendChild(itemHeader);
     itemSection.appendChild(itemDetails);
 
-    section_empty.appendChild(itemSection);
+    section_cart.appendChild(itemSection);
 
-    quantidade_items_carrinho ++
-    msg_quantity.innerHTML = `Your Cart (${quantidade_items_carrinho})`
+    quantity_items_cart ++
+    msg_quantity.innerHTML = `Your Cart (${quantity_items_cart})`
+
+    const order_total = document.createElement("div")
+    order_total.id = "order_total"
+
+    const p1 = document.createElement("p")
+    p1.textContent = "Order Total"
+    
+    const p_total_price = document.createElement("p")
+    p_total_price.id = "total_price"
+    p_total_price.textContent = pedido_total2
 }
