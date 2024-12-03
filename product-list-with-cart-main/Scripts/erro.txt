@@ -1,0 +1,15 @@
+O problema ocorre porque você está utilizando uma única variável quantity dentro do forEach para rastrear a quantidade de itens. Como essa variável é local ao escopo do evento de clique, cada botão mantém seu próprio estado de quantidade de forma isolada. Quando você altera um item, a lógica não está atualizando adequadamente a variável pedido_total2 para refletir as alterações feitas em outros itens do carrinho.
+
+Correção
+
+A solução é armazenar as quantidades de cada item separadamente. Uma abordagem eficiente seria usar um objeto ou array para rastrear as quantidades de cada item no carrinho e calcular o total com base nesse estado global.
+
+Crie um objeto para rastrear a quantidade de cada item:
+
+Cada entrada do cartState conterá:
+
+O nome do item.
+A quantidade no carrinho.
+O preço unitário.
+
+Sempre que houver uma alteração na quantidade de qualquer item, atualize o estado global (cartState) e recalculhe pedido_total2 com base nele.

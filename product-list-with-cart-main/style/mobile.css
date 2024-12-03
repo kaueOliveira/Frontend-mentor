@@ -190,7 +190,106 @@ section#cart > p {
     font-weight: 600;
 }
 
- /* Mudar apenas o background das divs img, os outros atributos se repetem    */
+/* ------------------------------- */
+
+div#back_ground { /**/
+    position: absolute; 
+    /* width: 100%; 
+    height: 200vh;  */
+    width: 0px;
+    height: 0px;
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+div#msg_box { /**/
+    background-color: white; 
+    position: absolute; 
+    /* width: 450px;  */
+    /* height: 400px; */
+    width: 0px;
+    border-radius: 10px;
+
+
+    left: 50%;
+    transform: translate(-50%); 
+
+    overflow: hidden;
+}
+
+div#msg_box > header {
+    margin: 30px;
+}
+
+div#msg_box > header img {
+    width: 12%;
+    margin-bottom: 10px;
+}
+
+div#msg_box > header h1 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+div#msg_box > header p {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    color: var(--Rose-300);
+}
+
+section#msg_box_orders  h1 {
+    font-size: 0.95em;
+    margin-bottom: 5px;
+}
+
+section#msg_box_orders > section > div:nth-of-type(2) {
+    display: flex;
+    /* justify-content: space-between; */
+    flex-flow: row nowrap;
+    width: 350px;
+    margin-bottom: 20px;
+}
+
+section#msg_box_orders #details > p {
+    margin-right: 20px;
+    width: 80px !important;
+}
+
+section#msg_box_orders #details > p:nth-of-type(3) {
+    font-size: 1.25em;
+    color: black;
+    margin: 0px 0px 0px 150px !important;
+}
+
+#msg_box_totalOrder {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px;
+    color: var(--Rose-900);
+    font-weight: 400;
+    font-size: 1em;
+}
+
+#p_total_value {
+    font-size: 1.7em;
+    font-weight: 900;
+}
+
+div#btn_new_order {
+   background-color: var(--Red);
+   color: white;
+   width: 85%;
+   margin: 20px auto;
+   padding: 8px;
+   border-radius: 15px;
+   text-align: center;
+}
+
+div#btn_new_order:hover {
+    cursor: pointer;
+    background-color:  hsl(14, 69%, 40%); 
+}
+
+/* Mudar apenas o background das divs img, os outros atributos se repetem    */
 
 /* .item > div:first-child {
     border-radius: 10px;
@@ -240,7 +339,6 @@ section#cart > h1 {
     margin: 10px 0px 0px 32px;  
     font-size: 1.8em;
     font-weight: 670;
-
     color: var(--Red);
 }
 
@@ -248,7 +346,6 @@ section#cart > h1 {
     margin-left: 32px;
     margin-top: 15px;
     width: 280px;
-    /* border: 1px solid red; */
 }
 
 #cart > section > div {
@@ -290,4 +387,46 @@ p#price {
 p#total {
     color: var(--Rose-500);
     font-weight: 500;
+}
+
+div#order_total {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    width: 95%;
+}
+
+div#order_total > p:nth-of-type(1) {
+    color: var(--Rose-900);
+    font-weight: 400;
+}
+
+div#order_total > p:nth-of-type(2) {
+    color: var(--Rose-900);
+    font-size: 1.6em;
+    font-weight: 800;
+}
+
+#p_img {
+    display: flex;
+    align-items: center;
+    margin: 20px auto;
+}
+
+img#img_carbon {
+    width: 15px;
+    height: 15px;
+    border: none;
+}
+
+#btn_confirm_order {
+    padding: 8px 85px;
+    border-radius: 15px;
+    color: white;
+    background-color: var(--Red);
+}
+
+#btn_confirm_order:hover {
+    cursor: pointer;
+    background-color:  hsl(14, 69%, 40%); 
 }
