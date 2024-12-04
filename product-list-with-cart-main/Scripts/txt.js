@@ -66,7 +66,7 @@ btn.forEach( b => {
                 }
             })
 
-            // Remove o carrinho vazio
+                // Remove o carrinho vazio
             if (has_msg_empty) {
                 section_cart.children[1].remove(), section_cart.children[1].remove()
                 has_msg_empty = false
@@ -76,6 +76,7 @@ btn.forEach( b => {
             const itemSection = document.createElement("section");
             itemSection.className = "order";
 
+            
             const itemHeader = document.createElement("div");
             
             const itemTitle = document.createElement("h1");
@@ -100,7 +101,7 @@ btn.forEach( b => {
             itemPrice.textContent = "@ $"+ chosen_item_price;
             
             const itemTotal = document.createElement("p"); 
-            itemTotal.textContent = "$" + quantity * chosen_item_price;
+            itemTotal.textContent = "$" + quantity * chosen_item_price; //
             itemTotal.id = "total"
             
             itemDetails.appendChild(itemQuantity);
@@ -110,13 +111,13 @@ btn.forEach( b => {
             itemSection.appendChild(itemHeader);
             itemSection.appendChild(itemDetails);
         
-            section_cart.appendChild(itemSection);
+            section_cart.appendChild(itemSection); // X
             quantity_items_cart++
             msg_quantity.innerHTML = `Your Cart (${quantity_items_cart})`
 
             pedido_total2 += quantity * chosen_item_price
 
-            funcao_confirm_order(chosen_item_name, chosen_item_price, quantity)
+            //console.log(itemSection)
             
             if (order_made) {
                 section_cart.children.confirm_order.remove()
@@ -183,8 +184,6 @@ btn.forEach( b => {
             img_product.classList.remove("selected")
             quantity_items_cart--
             msg_quantity.innerHTML = `Your Cart (${quantity_items_cart})`
-            let nome = b.parentNode.children[2].innerHTML
-            removendo_item_especifico(nome)
 
         };
 
@@ -198,6 +197,9 @@ btn.forEach( b => {
     })
 }) 
 
+// Mudar nome das variaveis p/ inglês
+//verificar classes e ids do html (nome tem que fazer sentido)
+
 function cart_empty () {
     const div_cart_empty = document.createElement("div")
     div_cart_empty.className = "cart_empty"
@@ -209,44 +211,48 @@ function cart_empty () {
     section_cart.appendChild(p_empty)
 }
 
-function funcao_confirm_order (chosen_item_name, chosen_item_price, quantity) {
-    
+function funcao_confirm_order () {
     const msg_box_orders = document.getElementById("msg_box_orders"); // X
+   
+    let son = [...document.getElementsByClassName("order")]
+    son.map(f => {
+        msg_box_orders.appendChild(f)
+    })
+    console.log(msg_box_orders)
+    // const itemSection2 = document.createElement("section");
+    // itemSection2.className = "order";
     
-    const itemSection2 = document.createElement("section");
-    itemSection2.className = "order";
+    // const itemHeader = document.createElement("div");
     
-    const itemHeader = document.createElement("div");
+    // const itemTitle = document.createElement("h1");
+    // itemTitle.textContent = chosen_item_name;
     
-    const itemTitle = document.createElement("h1");
-    itemTitle.textContent = chosen_item_name;
+    // itemHeader.appendChild(itemTitle);
     
-    itemHeader.appendChild(itemTitle);
+    // const itemDetails = document.createElement("div");
+    // itemDetails.id = "details"
     
-    const itemDetails = document.createElement("div");
-    itemDetails.id = "details"
+    // const itemQuantity = document.createElement("p");
+    // itemQuantity.id = "amount"
+    // itemQuantity.textContent = quantity + "x";
     
-    const itemQuantity = document.createElement("p");
-    itemQuantity.id = "amount"
-    itemQuantity.textContent = quantity + "x";
+    // const itemPrice = document.createElement("p");
+    // itemPrice.id = "price"
+    // itemPrice.textContent = "@ $"+ chosen_item_price;
     
-    const itemPrice = document.createElement("p");
-    itemPrice.id = "price"
-    itemPrice.textContent = "@ $"+ chosen_item_price;
+    // const itemTotal = document.createElement("p"); 
+    // itemTotal.textContent = "$" + quantity * chosen_item_price;
+    // itemTotal.id = "total"
     
-    const itemTotal = document.createElement("p"); 
-    itemTotal.textContent = "$" + quantity * chosen_item_price;
-    itemTotal.id = "total"
+    // itemDetails.appendChild(itemQuantity);
+    // itemDetails.appendChild(itemPrice);
+    // itemDetails.appendChild(itemTotal);
     
-    itemDetails.appendChild(itemQuantity);
-    itemDetails.appendChild(itemPrice);
-    itemDetails.appendChild(itemTotal);
-    
-    itemSection2.appendChild(itemHeader);
-    itemSection2.appendChild(itemDetails);
-    
+    // itemSection2.appendChild(itemHeader);
+    // itemSection2.appendChild(itemDetails);
+    // //itemSection2.appendChild(itemDetails);
 
-    msg_box_orders.appendChild(itemSection2);
+    //msg_box_orders.appendChild(itemSection2);
 }
 
 function finalizar_pedido (order_total, p_img) {
@@ -266,6 +272,7 @@ function finalizar_pedido (order_total, p_img) {
         order_made = true
             
         btn_confirm_order.addEventListener("click", (evt)=>{
+            funcao_confirm_order()
             const div_backGroung = document.getElementById("back_ground")
             const msg_box = document.getElementById("msg_box")
 
@@ -302,31 +309,8 @@ function finalizar_pedido (order_total, p_img) {
                     
                 evt.target.parentNode.children[1].children[0].remove()
 
-                location.reload()
-                //reset() 
+                location.reload()// reset() 
             });
     })
 }
-
-function removendo_item_especifico (nome) {
-    const pedido = [...msg_box_orders.getElementsByClassName("order")]
-
-    pedido.map(p => {
-        let nome_box = p.children[0].children[0].innerHTML
-        if (nome === nome_box) {
-            p.remove()
-        }
-    })
-}
-
-function reset () { //ERRO
-    // section_cart.children[1].remove(), section_cart.children[1].remove()
-    // cart_empty ()
-    // clearInterval(intervalo);
-    // section_cart.children.confirm_order.remove()
-    // quantity = 0
-    // quantity_items_cart = 0
-    // pedido_total2 = 0
-    // has_msg_empty = true
-    // order_made =  false    
-}
+function reset () {}
