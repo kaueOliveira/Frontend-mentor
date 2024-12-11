@@ -28,7 +28,6 @@
 body {
     font-family: 'RedHat-Normal';
     background-color: var(--Rose-100);
-    /* background-color: gray; teste */
 }
 
 section {
@@ -89,76 +88,47 @@ div.btn_add:hover {
     color: var(--Red);
 }
 
-div#waffle_img {
-    background: black url('../assets/images/image-waffle-mobile.jpg') no-repeat center right / cover;
-    border-radius: 10px;    
+div.item > div:first-child {
+    border-radius: 10px;
     width: 325px;
     height: 250px;
     margin: auto;
+}
+
+div#waffle_img {
+    background: black url('../assets/images/image-waffle-mobile.jpg') no-repeat center right / cover;
 }
 
 div#brulee_img {
     background: black url('../assets/images/image-creme-brulee-mobile.jpg') no-repeat center / cover;
-    border-radius: 10px;
-    width: 325px;
-    height: 250px;
-    margin: auto;
 }
 
 div#macaron_img {
     background: black url('../assets/images/image-macaron-mobile.jpg') no-repeat center / cover;
-    border-radius: 10px;
-    width: 325px;
-    height: 250px;
-    margin: auto;
 }
 
 div#tiramisu_img {
     background: black url('../assets/images/image-tiramisu-mobile.jpg') no-repeat center / cover;
-    border-radius: 10px;
-    width: 325px;
-    height: 250px;
-    margin: auto;
 }
 
 div#baklava_img {
     background: black url('../assets/images/image-baklava-mobile.jpg') no-repeat center / cover;
-    border-radius: 10px;
-    width: 325px;
-    height: 250px;
-    margin: auto;
 }
 
 div#meringue_img {
     background: black url('../assets/images/image-meringue-mobile.jpg') no-repeat center / cover;
-    border-radius: 10px;
-    width: 325px;
-    height: 250px;
-    margin: auto;
 }
 
 div#redVelt_img {
     background: black url('../assets/images/image-cake-mobile.jpg') no-repeat center / cover;
-    border-radius: 10px;
-    width: 325px;
-    height: 250px;
-    margin: auto;
 }
 
 div#brownie_img {
     background: black url('../assets/images/image-brownie-mobile.jpg') no-repeat center / cover;
-    border-radius: 10px;
-    width: 325px;
-    height: 250px;
-    margin: auto;
 }
 
 div#pannaCotta_img {
     background: black url('../assets/images/image-panna-cotta-mobile.jpg') no-repeat center / cover;
-    border-radius: 10px;
-    width: 325px;
-    height: 250px;
-    margin: auto;
 }
 
 section#cart {
@@ -194,6 +164,7 @@ section#cart > p {
 
 div#back_ground { /**/
     position: absolute; 
+    top: 0%;
     /* width: 100%; 
     height: 200vh;  */
     width: 0px;
@@ -209,7 +180,7 @@ div#msg_box { /**/
     width: 0px;
     border-radius: 10px;
 
-
+    top: 2%;
     left: 50%;
     transform: translate(-50%); 
 
@@ -251,7 +222,7 @@ section#msg_box_orders > section > div:nth-of-type(2) {
 
 section#msg_box_orders #details > p {
     margin-right: 20px;
-    width: 80px !important;
+    width: 80px;
 }
 
 section#msg_box_orders #details > p:nth-of-type(3) {
@@ -288,15 +259,6 @@ div#btn_new_order:hover {
     cursor: pointer;
     background-color:  hsl(14, 69%, 40%); 
 }
-
-/* Mudar apenas o background das divs img, os outros atributos se repetem    */
-
-/* .item > div:first-child {
-    border-radius: 10px;
-    width: 325px;
-    height: 250px;
-    margin: auto;
-} */
 
 /* Script */
 

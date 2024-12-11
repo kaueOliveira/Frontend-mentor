@@ -1,4 +1,4 @@
-@media screen and (min-width: 1500px) {
+@media screen and (min-width: 600px) {
     main {
         display: flex;
     }
@@ -10,7 +10,7 @@
         justify-content: space-between;
         margin-left: 3.5vw;
         margin-right: 0vw;
-        border: 1px solid red;
+        /* border: 1px solid red; */
     }
 
     section#first h1 {
@@ -23,7 +23,7 @@
     div.item {
         margin: 0px auto;
         width: 22vw;
-        border: 1px solid green;
+        /* border: 1px solid green; */
     }
 
     div.btn_add {
@@ -51,7 +51,7 @@
     }
       
     section#cart {
-        border: 1px solid blue;
+        /* border: 1px solid blue; */
         margin: 0 auto;
         height: 300px;
     }
