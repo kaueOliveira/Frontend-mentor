@@ -1,0 +1,62 @@
+////////////////////////////////////////////////////////////////////////////////
+
+function validar() {
+    let isValid = true;
+
+    const validations = [
+        {
+            element: name,
+            regex: /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/,
+            length: null,
+        },
+        {
+            element: number,
+            regex: /^[0-9\s]*$/,
+            length: 19,
+        },
+        {
+            element: month,
+            regex: /^[0-9]+$/,
+            length: 2,
+        },
+        {
+            element: year,
+            regex: /^[0-9]+$/,
+            length: 2,
+        },
+        {
+            element: cvc,
+            regex: /^[0-9]+$/,
+            length: 3,
+        },
+    ];
+
+    validations.forEach(({ element, regex, length }) => {
+        const isValidField = regex.test(element.value) && (length ? element.value.length === length : true);
+        element.classList.toggle("error", !isValidField);
+        isValid = isValid && isValidField;
+    });
+
+    return isValid;
+}
+/////////////////////////////////////////////////////////////////////////////
+
+n consigo mudar a mensagem de erro
+
+ O problema ocorre porque, quando você define o innerHTML pela primeira vez (ao adicionar a mensagem de erro), o parágrafo <p> com a classe "msg_e" já foi criado e, assim, ao tentar definir o segundo innerHTML, a lógica que você implementou verifica o número de filhos do parentNode e impede a criação ou atualização do mesmo elemento.
+
+ if (name.parentNode.querySelector(".msg_e") == null) {
+             const msg_error = document.createElement("p");
+             msg_error.setAttribute("class", "msg_e");
+             name.parentNode.appendChild(msg_error);
+         }
+        
+          Seleciona o elemento de erro
+         const msg_error = name.parentNode.querySelector(".msg_e");
+        
+          Define o conteúdo da mensagem de erro com base na condição
+         if (name.value == "") {
+             msg_error.innerHTML = "can't be blank";
+         } else {
+             msg_error.innerHTML = "only letters";
+         }
