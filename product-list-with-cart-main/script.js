@@ -1,6 +1,7 @@
 const btn = document.querySelectorAll(".btn_add");
 const section_cart = document.getElementById("cart");
 const msg_quantity = section_cart.getElementsByTagName("h1")[0];
+const main = document.getElementById("main")
 
 const items = [
     {name: "Waffle with Berries", price: 6.50},
@@ -112,6 +113,12 @@ btn.forEach( b => {
             msg_quantity.innerHTML = `Your Cart (${quantity_items_cart})`;
 
             total_order_value += quantity * chosen_item_price;
+
+            //Remover itens específicos do carrinho
+
+            // removeIcon.addEventListener("click", (evt)=>{
+            //     evt.target.parentNode.parentNode.remove()
+            // })
             
             if (order_made) {
                 section_cart.children.confirm_order.remove();
@@ -192,7 +199,7 @@ btn.forEach( b => {
     });
 });
 
-function cart_empty () {
+function cart_empty () { //Mensagem de carrinho vazio
     const div_cart_empty = document.createElement("div");
     div_cart_empty.className = "cart_empty";
 
@@ -232,34 +239,15 @@ function complete_order (order_total, p_img) { //Finaliza o pedido e cria caixas
             
         btn_confirm_order.addEventListener("click", (evt)=>{
             adding_items_to_order_confirmation ()
-            const div_background = document.getElementById("back_ground");
+            const div_background = document.getElementById("back_ground"); //preto
             const msg_box = document.getElementById("msg_box");
 
             div_background.style.width = "100%";
-
-            window.addEventListener("resize", ()=>{
-                console.log(window.innerWidth);
-                if(window.innerWidth < "650") {
-                    div_background.style.height = "100vh";
-                } else {
-                    let tamanho_tela = 276400 / window.innerWidth;
-                    div_background.style.height = `${tamanho_tela}vh`;
-                }
-            });
-            
-            if(window.innerWidth < "650") {
-                div_background.style.height = "100vh";
-            } else {
-                let tamanho_tela = 276400 / window.innerWidth;
-                div_background.style.height = `${tamanho_tela}vh`;
-            }
-            
-            let tamanho_tela = 276400 / window.innerWidth;
-            div_background.style.height = `${tamanho_tela}vh`;
-
+            div_background.style.height = `${document.documentElement.scrollHeight}px`
+            //-----------------------------------------------------------------------------------------
             msg_box.style.width = "400px";//mudar p/ media-query
             msg_box.style.overflow = "auto";
-                
+            //-----------------------------------------------------------------------------------------    
             const order_total_msg_box = document.getElementById("msg_box_totalOrder");
 
             const p_order_total = document.createElement("p");
@@ -273,6 +261,7 @@ function complete_order (order_total, p_img) { //Finaliza o pedido e cria caixas
             order_total_msg_box.appendChild(p_order_total);
             order_total_msg_box.appendChild(pTotalValue);
 
+            window.scrollTo({top: 0})
                 
             const btn_new_order = document.getElementById("btn_new_order");
             btn_new_order.addEventListener("click", (evt)=>{
@@ -304,6 +293,21 @@ function remove_item_from_order_confirmation (nome) {
     });
 }
 
+
+//Criar função para atualizar valor total do pedido
+
+
+
+
+
+
+
+
+
+
+
+/* Lugar feito para salvar trechos de códigos */
+
 function reset () { //ERRO
     // section_cart.children[1].remove(), section_cart.children[1].remove()
     // cart_empty ()
@@ -315,6 +319,30 @@ function reset () { //ERRO
     // has_msg_empty = true
     // order_made =  false    
 }
+
+// function mudartamanho(){
+//     window.addEventListener("resize", ()=>{
+//         if(window.innerWidth < "650") { 
+//             div_background.style.height = "100vh";
+//         } else {
+//             let tamanho_tela = 276400 / window.innerWidth;
+//             div_background.style.height = `${tamanho_tela}vh`;
+//         }
+//     });
+    
+//     if(window.innerWidth < "650") {
+//         div_background.style.height = "100vh";
+//     } else {
+//         let tamanho_tela = 276400 / window.innerWidth;
+//         div_background.style.height = `${tamanho_tela}vh`;
+//     }
+    
+//     let tamanho_tela = 276400 / window.innerWidth;
+//     div_background.style.height = `${tamanho_tela}vh`;
+
+//     msg_box.style.width = "400px";//mudar p/ media-query
+//     msg_box.style.overflow = "auto";  
+// }
 
 
 // 1536 ------ 180 = 276480

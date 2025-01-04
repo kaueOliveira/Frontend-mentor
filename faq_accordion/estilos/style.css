@@ -22,7 +22,7 @@ body {
 }
 
 div#fundo { /* Imagem de Fundo */
-    background-image: url(/assets/images/background-pattern-desktop.svg);
+    background-image: url('/assets/images/background-pattern-desktop.svg');
     height: 40vh;
 }
 
@@ -40,8 +40,6 @@ div#principal {
     left: 50%;
     top: 50%;
     transform:translate(-50%, -50%);
-    
-    transition: width 0.3s, heigth 0.3s;
 }
 
 div#imagem {
@@ -88,7 +86,6 @@ div.div_inativa > p {
 .div_inativa {
     height: 0;
     overflow: hidden;
-    /* transition: height 0.3s ease;; */
 }
 
 .attribution {

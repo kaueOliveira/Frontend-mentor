@@ -23,51 +23,39 @@ button.addEventListener("click", (evt) => {
 })
 
 function validar () {
+    let monthANDyear = document.getElementById("div-1")
     let isValid = true
     //NAME !
+
     if(/^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/.test(name.value) && name.value !== "") {
-        if(name.parentNode.children[1] !== undefined) {
-            name.parentNode.children[1].remove()
-            name.classList.remove("error")
-        }
-    } else {
+        verifica_erro(name)
+     } else { // Tem um erro
+        cria_msg_erro(name)
+
         name.classList.add("error")
         isValid = false
-        if (name.parentNode.querySelector(".msg_e") == null) { 
-            //Apenas se n tiver erros ele cria.
-            const msg_error = document.createElement("p");
-            msg_error.setAttribute("class", "msg_e");
-            name.parentNode.appendChild(msg_error);
-        }
+     
+         const msg_error = name.parentNode.querySelector(".msg_e");
+     
+         if (name.value == "") {
+             msg_error.innerHTML = "can't be blank";
+         } else {
+             msg_error.innerHTML = "only letters";
+         }
+     }
 
-        const msg_error = name.parentNode.querySelector(".msg_e");
-
-        if (name.value == "") {
-            msg_error.innerHTML = "can't be blank";
-        } else {
-            msg_error.innerHTML = "only letters";
-        }
-    }
     //NUMBER !
     if (/^[0-9\s]*$/.test(number.value) && number.value.length == 19) {
-        if(number.parentNode.children[1] !== undefined){
-            number.parentNode.children[1].remove()
-            number.classList.remove("error")
-        }
+        verifica_erro(number)
     } else {
+        cria_msg_erro(number)
         number.classList.add("error")
         isValid = false
-        if (number.parentNode.querySelector(".msg_e") == null) { 
-            //Apenas se n tiver erros ele cria.
-            const msg_error = document.createElement("p");
-            msg_error.setAttribute("class", "msg_e");
-            number.parentNode.appendChild(msg_error);
-        }
 
         const msg_error = number.parentNode.querySelector(".msg_e");
 
         if (number.value.length < 19) {
-            msg_error.innerHTML = "There must be 19 numbers"
+            msg_error.innerHTML = "There must be 16 numbers"
         } else if (number.value == "") {
             msg_error.innerHTML = "can't be blank";
         } else {
@@ -75,11 +63,9 @@ function validar () {
         }
     }
     //MES
+
     if(/^[0-9]+$/.test(month.value) && month.value.length === 2 && month.value <= 12){
-        if(month.parentNode.children[1] !== undefined){
-            month.parentNode.children[1].remove()
-            month.classList.remove("error")
-        }
+        verifica_erro(month)
     } else {
         month.classList.add("error")
         isValid = false
@@ -93,50 +79,38 @@ function validar () {
         const msg_error = month.parentNode.querySelector(".msg_e");
 
         if (month.value == "") {
-            msg_error.innerHTML = "Blank";
+            msg_error.innerHTML = "Can't be blank";
         } else {
             msg_error.innerHTML = "Only numbers";
         }
     }
-    //ANO
+
+    // year
+
     if(/^[0-9]+$/.test(year.value) && year.value.length === 2){
-        if(year.parentNode.children[1] !== undefined){
-            year.parentNode.children[1].remove()
-            year.classList.remove("error")
-        }
+        verifica_erro(year)
     } else {
+        cria_msg_erro(year)
         year.classList.add("error")
         isValid = false
-        if (year.parentNode.querySelector(".msg_e") == null) { 
-            //Apenas se n tiver erros ele cria.
-            const msg_error = document.createElement("p");
-            msg_error.setAttribute("class", "msg_e");
-            year.parentNode.appendChild(msg_error);
-        }
 
         const msg_error = year.parentNode.querySelector(".msg_e");
 
         if (year.value == "") {
-            msg_error.innerHTML = "Blank";
+            msg_error.innerHTML = "Can't be blank";
         } else {
             msg_error.innerHTML = "Only numbers";
         }
     }
+    
     //CVC
+    
     if(/^[0-9]+$/.test(cvc.value) && cvc.value.length === 3){
-        if(cvc.parentNode.children[1] !== undefined){
-            cvc.parentNode.children[1].remove()
-            cvc.classList.remove("error")
-        }
+       verifica_erro(cvc)
     } else {
+        cria_msg_erro(cvc)
         cvc.classList.add("error")
         isValid = false
-        if (cvc.parentNode.querySelector(".msg_e") == null) { 
-            //Apenas se n tiver erros ele cria.
-            const msg_error = document.createElement("p");
-            msg_error.setAttribute("class", "msg_e");
-            cvc.parentNode.appendChild(msg_error);
-        }
 
         const msg_error = cvc.parentNode.querySelector(".msg_e");
 
@@ -146,6 +120,28 @@ function validar () {
             msg_error.innerHTML = "Only numbers";
         }
     }
+
+    function verifica_erro (campus_form) {
+        let has_error = campus_form.classList.contains("error");
+        
+        if(has_error){
+            campus_form.parentNode.querySelector(".msg_e").remove();
+            campus_form.classList.remove("error");
+        }
+    } 
+    
+    function cria_msg_erro (campus_form) {
+        let has_error = campus_form.classList.contains("error");
+    
+        if (!has_error) { //verifica se n tem erro
+            //Apenas se n tiver erros ele cria.
+            const msg_error = document.createElement("p");
+            msg_error.setAttribute("class", "msg_e");
+            campus_form.parentNode.appendChild(msg_error);
+        }
+    
+    }
+
     return isValid
 }
 
@@ -174,7 +170,7 @@ function complete_state () {
         div_complete.appendChild(p_complete)
 
         main.append(div_complete)
-        main.append(new_button)
+     // main.append(new_button)
 }
 
 //mensagem de thank you
