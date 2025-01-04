@@ -107,14 +107,17 @@ label {
     font-weight: 550;
 }
 
+#p_label {
+    margin-top: 24.5px;
+}
+
 input{
     width: calc(100% - 16px);
     height: 7vh;
-    max-height: 50px;
+    max-height: 40px;
     border-radius: 10px;
     border: 1px solid var(--Light-grayish-violet);
-    margin-bottom: 20px;
-    margin-top: 10px;
+    margin: 5px auto 0px auto;
     padding-left: 15px;
     font-size: 0.97em;
 }
@@ -127,32 +130,30 @@ input::placeholder{
 #date_cvc {
     display: flex;
     width: 100%;
+    margin-top: 24.5px;
 }
 
 #div-1 /*,#div-2*/ {
-    width: 40%;
+    width: 45%;
 }
 
 #div-2 {
-    width: 60%;
+    width: 55%;
 }
 
 .month_year {
     width: 30%;
-    margin-right: 10px;
-    margin-bottom: 0;
 }
 
-#cvc {
+#i_cvc {
     width: calc(100% - 17px);
-    margin-bottom: 0;
 }
 
 button {
     width: 100%;
     height: 7vh;
-    max-height: 50px;
-    margin: 30px auto;
+    max-height: 40px;
+    margin: 35px auto 15px;
     font-size: 1em;
     color: var(--Light-grayish-violet);
     background-color: var(--Very-dark-violet);
@@ -176,13 +177,18 @@ button:hover {
     color: red;
     font-weight: 500;
     font-size: 0.8em;
-    margin: -20px 0px 2px 0px;
+
+    position: relative;
+
+    margin-bottom: -15px;
 }
 
 
 div#comp_state {
     text-align: center;
+    margin: 10vh auto;
 }
+
 
 div#comp_state > img, div#comp_state h1, div#comp_state p {
     margin-top: 20px;
