@@ -132,7 +132,7 @@ btn.forEach( b => {
     
             const p_total_price = document.createElement("p");
             p_total_price.id = "total_price";
-                    
+              
             interval = setInterval(() => {
                 p_total_price.textContent = "$ " + total_order_value;
             }, 500);
@@ -160,6 +160,7 @@ btn.forEach( b => {
                 itemQuantity.textContent = quantity + "x";
                 itemTotal.textContent = "$" + quantity * chosen_item_price;
                 total_order_value = total_order_value - chosen_item_price; 
+            
                 if (quantity === 0) {
                     p_total_price.textContent = "$ " + total_order_value;
                     itemSection.remove();
@@ -295,54 +296,5 @@ function remove_item_from_order_confirmation (nome) {
 
 
 //Criar função para atualizar valor total do pedido
-
-
-
-
-
-
-
-
-
-
-
-/* Lugar feito para salvar trechos de códigos */
-
-function reset () { //ERRO
-    // section_cart.children[1].remove(), section_cart.children[1].remove()
-    // cart_empty ()
-    // clearInterval(intervalo);
-    // section_cart.children.confirm_order.remove()
-    // quantity = 0
-    // quantity_items_cart = 0
-    // pedido_total2 = 0
-    // has_msg_empty = true
-    // order_made =  false    
-}
-
-// function mudartamanho(){
-//     window.addEventListener("resize", ()=>{
-//         if(window.innerWidth < "650") { 
-//             div_background.style.height = "100vh";
-//         } else {
-//             let tamanho_tela = 276400 / window.innerWidth;
-//             div_background.style.height = `${tamanho_tela}vh`;
-//         }
-//     });
-    
-//     if(window.innerWidth < "650") {
-//         div_background.style.height = "100vh";
-//     } else {
-//         let tamanho_tela = 276400 / window.innerWidth;
-//         div_background.style.height = `${tamanho_tela}vh`;
-//     }
-    
-//     let tamanho_tela = 276400 / window.innerWidth;
-//     div_background.style.height = `${tamanho_tela}vh`;
-
-//     msg_box.style.width = "400px";//mudar p/ media-query
-//     msg_box.style.overflow = "auto";  
-// }
-
-
-// 1536 ------ 180 = 276480
+//remover item especifico do carrinho
+// mudou ?
