@@ -25,10 +25,8 @@ const info = (endPoint, section) => {
             price.className = "price"
             price.textContent = "$" + parseFloat(el.price).toFixed(2);
 
-            console.log(price)
-
             const btn_add = document.createElement("div")
-            btn_add.className = "btn_add"
+            btn_add.className = "btn_add inative"
 
             const img_icon_add_cart = document.createElement("img")
             img_icon_add_cart.src = "../assets/images/icon-add-to-cart.svg"

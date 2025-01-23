@@ -127,6 +127,7 @@ div.btn_add {
     align-items: center;                                                                  
 
     width: 120px;
+    height: 20px;
     padding: 5px;
     border-radius: 20px;
     border: 1px solid var(--Rose-400);
@@ -194,6 +195,104 @@ div#cart > p {
     padding-bottom: 15px;
 }
 
+/*-----------------------------*/
+
+#background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.418);
+}
+
+#msg_box {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: white;
+    width: 450px;
+    border-radius: 10px;
+}
+
+#msg_box > header {
+    border: 1px solid red;
+    width: fit-content;
+    margin: 20px 30px;
+}
+
+#msg_box > header > h1 {
+    font-size: 1.4em;
+    margin: 5px 0px;
+}
+
+#msg_box > header > p {
+    font-size: 0.6em;
+}
+
+#btn_new_order {
+    width: 85%;
+    font-weight: 200;
+    font-size: 0.95em;
+    margin: 15px auto;
+    padding: 7px 0px;
+    color: white;
+    text-align: center;
+    border-radius: 15px;
+    background-color: var(--Red);
+}
+
+#btn_new_order:hover {
+    cursor: pointer;
+    color: var(--Red);
+    background-color: white;
+    border: 1px solid var(--Red);
+}
+
+/*-----------------------------*/
+
+.ative {
+    background-color: var(--Red) !important;
+    color: white !important;
+    cursor: initial !important;
+    justify-content: space-around !important;
+}
+
+.btn_quant {
+    border: 1.5px solid white;
+    border-radius: 100%;
+    padding: 3px;
+    height: 8px;
+    width: 8px;
+    cursor: pointer;
+}
+
+/* SCRIPTS */
+
+div#div_order {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    padding-bottom: 5px;
+
+    font-size: 0.8em;
+}
+
+div#details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+div#div_order img {
+    border-radius: 100%;
+    border: 1px solid var(--Rose-300);
+    padding: 2px;
+    cursor: pointer;
+}
+
 @media (0px <= width <= 1400px) {
     section#first {
         justify-content: space-evenly;
@@ -238,3 +337,29 @@ div#cart > p {
         margin: 0px auto;
     }
 }
+
+/* section#details {
+    display: grid;
+
+    grid-template-areas: 
+    'h1 h1 h1'
+    'quantity price total_price' 
+    ;
+}  
+
+section#details > h1 {
+    grid-area: h1;
+    font-size: 0.85em;
+}
+
+section#details > p#quantity {
+    grid-area: quantity;
+}
+
+section#details > p#price {
+    grid-area: price;
+}
+
+section#details > p#total_price {
+    grid-area: total_price;
+} */
