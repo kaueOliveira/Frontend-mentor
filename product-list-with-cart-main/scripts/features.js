@@ -11,6 +11,8 @@ setTimeout(()=>{
         order_made: false,
         msg_order_total: false,
     }
+
+    let order_total = 0;
     
     btn_add_item.forEach(btn => {
         let quantity = 0;
@@ -74,7 +76,9 @@ setTimeout(()=>{
 
                 const p_total_price = document.createElement("p");
                 p_total_price.id = "total_price";
-                p_total_price.textContent = `$ ${quantity * chosen_item_price}`;
+
+                let total = quantity * chosen_item_price
+                p_total_price.textContent = `$ ${total}`;
 
                 const remove_icon = document.createElement("img");
                 remove_icon.className = "btn_remove"
@@ -101,6 +105,33 @@ setTimeout(()=>{
                 msg_quantity.textContent = `Your Cart(${cart_details.quantity_items_cart})`;
 
                 //////////////////////////////////////////////////////////////
+                
+                // Atualizando valor total
+                order_total += total
+
+                let div_ord_tot = document.createElement("div");
+                div_ord_tot.id = "div_tot";
+                div_ord_tot.className = "div_tot";
+
+                if (cart_details.msg_order_total) {
+                    cart.children.div_tot.remove();
+                }
+
+                let p_ord_tot = document.createElement("p");
+                p_ord_tot.id = "p_tot";
+                p_ord_tot.textContent = "Order Total";
+
+                let val_ord_tot = document.createElement("p");
+                val_ord_tot.id = "val_tot";
+                val_ord_tot.textContent = `$ ${order_total}`;
+
+                div_ord_tot.appendChild(p_ord_tot);
+                div_ord_tot.appendChild(val_ord_tot);
+
+                cart.appendChild(div_ord_tot);
+                cart_details.msg_order_total = true; 
+
+                //////////////////////////////////////////////////////////////
 
                 img_decrement.addEventListener("click", (evt)=> {
                     quantity --;
@@ -112,6 +143,31 @@ setTimeout(()=>{
                     if (quantity === 0) {
                         div_order.remove();
                     }
+
+                    // Atualizando valor total
+                    order_total = order_total - total
+                    console.log(order_total)
+                    let div_ord_tot = document.createElement("div");
+                    div_ord_tot.id = "div_tot";
+                    div_ord_tot.className = "div_tot";
+
+                    if (cart_details.msg_order_total) {
+                        cart.children.div_tot.remove();
+                    }
+
+                    let p_ord_tot = document.createElement("p");
+                    p_ord_tot.id = "p_tot";
+                    p_ord_tot.textContent = "Order Total";
+
+                    let val_ord_tot = document.createElement("p");
+                    val_ord_tot.id = "val_tot";
+                    val_ord_tot.textContent = `$ ${order_total}`;
+
+                    div_ord_tot.appendChild(p_ord_tot);
+                    div_ord_tot.appendChild(val_ord_tot);
+
+                    cart.appendChild(div_ord_tot);
+                    cart_details.msg_order_total = true; 
                 });
 
                 img_increment.addEventListener("click", (evt)=> {
@@ -120,6 +176,30 @@ setTimeout(()=>{
 
                     p_quantity.textContent = `${quantity} x`;
                     p_total_price.textContent = `$ ${quantity * chosen_item_price}`;
+
+                    // Atualizando valor total
+                    order_total += total
+                    let div_ord_tot = document.createElement("div");
+                    div_ord_tot.id = "div_tot";
+                    div_ord_tot.className = "div_tot";
+
+                    if (cart_details.msg_order_total) {
+                        cart.children.div_tot.remove();
+                    }
+
+                    let p_ord_tot = document.createElement("p");
+                    p_ord_tot.id = "p_tot";
+                    p_ord_tot.textContent = "Order Total";
+
+                    let val_ord_tot = document.createElement("p");
+                    val_ord_tot.id = "val_tot";
+                    val_ord_tot.textContent = `$ ${order_total}`;
+
+                    div_ord_tot.appendChild(p_ord_tot);
+                    div_ord_tot.appendChild(val_ord_tot);
+
+                    cart.appendChild(div_ord_tot);
+                    cart_details.msg_order_total = true; 
                 });
             }; 
 
@@ -149,13 +229,17 @@ setTimeout(()=>{
                 p.textContent = `Your added items will appear here`;
                 cart.appendChild(p);
 
+                cart.children.div_tot.remove();
+                order_total = 0;
+
                 cart_details.has_msg_empty = true;
+                cart_details.msg_order_total = false;
             }
         });
     });
 
-
-    
 }, 1000);
 
 // tentar usar async
+// Colocar uma borda ao redor do item selecionado.
+// Colocar zeros após o ";".
