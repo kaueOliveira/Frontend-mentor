@@ -199,14 +199,15 @@ div#cart > p {
 
 #background {
     position: fixed;
-    width: 100vw;
-    height: 100vh;
+    width: 0; /*100vw*/
+    height: 0; /*100vh*/
     background-color: rgba(0, 0, 0, 0.418);
+    overflow: hidden;
 }
 
 #msg_box {
     position: absolute;
-    top: 20%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
@@ -216,13 +217,12 @@ div#cart > p {
 }
 
 #msg_box > header {
-    border: 1px solid red;
     width: fit-content;
-    margin: 20px 30px;
+    margin: 15px 30px 2px 30px;
 }
 
 #msg_box > header > h1 {
-    font-size: 1.4em;
+    font-size: 1.2em;
     margin: 5px 0px;
 }
 
@@ -230,11 +230,19 @@ div#cart > p {
     font-size: 0.6em;
 }
 
-#btn_new_order {
+#msg_box_orders {
     width: 85%;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--Rose-50);
+}
+
+#btn_new_order {
+    width: 90%;
     font-weight: 200;
     font-size: 0.95em;
-    margin: 15px auto;
+    margin: 10px auto;
     padding: 7px 0px;
     color: white;
     text-align: center;
@@ -268,6 +276,13 @@ div#cart > p {
 }
 
 /* SCRIPTS */
+
+/*Detalhes*/
+
+.selected {
+    border: 2px solid var(--Red) !important;
+    transition: 0.1s;
+}
 
 /*Nome e detalhes dos itens*/
 div#div_order {
@@ -309,8 +324,7 @@ div#div_order img {
     cursor: pointer;
 }
 
-/*Order Total*/
-
+/* Order Total */
 div.div_tot {
     width: 90%;
     margin: auto;
@@ -332,6 +346,50 @@ p#val_tot {
     font-size: 1.4em;
 }
 
+/* Carbon */
+.div_msg_carbon {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    width: 75%;
+    margin: 15px auto;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 0.85em;
+    background-color: var(--Rose-100);
+}
+
+/* Botão */
+.confirm_order {
+    width: 90%;
+    margin: auto;
+    padding: 7px 0px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    color: white;
+    background-color: var(--Red);
+    cursor: pointer;
+}
+
+p#margin {
+    height: 5px;
+}
+
+/*- Div Final -*/
+
+.div_item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.div_item > img {
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
 @media (0px <= width <= 1400px) {
     section#first {
         justify-content: space-evenly;
@@ -339,15 +397,9 @@ p#val_tot {
     }
 }
 
-/* Tablets */
+/* Celular / Tablet */
 
-@media screen {
-    
-}
-
-/* Celular */
-
-@media (0px <= width <= 605px) {
+@media (0px <= width <= 1100px) { /*605px*/
     main {
         grid-template-areas: 
         'header'
@@ -376,29 +428,3 @@ p#val_tot {
         margin: 0px auto;
     }
 }
-
-/* section#details {
-    display: grid;
-
-    grid-template-areas: 
-    'h1 h1 h1'
-    'quantity price total_price' 
-    ;
-}  
-
-section#details > h1 {
-    grid-area: h1;
-    font-size: 0.85em;
-}
-
-section#details > p#quantity {
-    grid-area: quantity;
-}
-
-section#details > p#price {
-    grid-area: price;
-}
-
-section#details > p#total_price {
-    grid-area: total_price;
-} */
