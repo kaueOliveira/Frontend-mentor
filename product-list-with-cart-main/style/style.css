@@ -187,6 +187,7 @@ div#cart > div.cart_empty {
     background: var(--Rose-50) url('../assets/images/illustration-empty-cart.svg') no-repeat center / contain;
     height: 100px;
     margin: 15px 0px;
+    user-select: none;
 }
 
 div#cart > p {
@@ -273,6 +274,7 @@ div#cart > p {
     height: 8px;
     width: 8px;
     cursor: pointer;
+    user-select: none;
 }
 
 /* SCRIPTS */

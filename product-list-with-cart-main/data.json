@@ -67,7 +67,7 @@
             "desktop": "./assets/images/image-meringue-desktop.jpg"
         },
         "name": "Lemon Meringue Pie",
-        "category": "Pie",
+        "category": "Meringue",
         "price": 5.00,
         "id": "meringue"
      },
