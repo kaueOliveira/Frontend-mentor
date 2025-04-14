@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'PlusJakartaSans';
+}
+
+@font-face {
+    font-family: 'PlusJakartaSans';
+    src: url("/assets/fonts/PlusJakartaSans-VariableFont_wght.ttf");
+}
+
+:root {
+    --Red: hsl(1, 90%, 64%);
+    --Blue: hsl(219, 85%, 26%);
+
+    --White: hsl(0, 0%, 100%);
+    --Very-light-grayish-blue: hsl(210, 60%, 98%);
+    --Light-grayish-blue-1: hsl(211, 68%, 94%);
+    --Light-grayish-blue-2: hsl(205, 33%, 90%);
+    --Grayish-blue: hsl(219, 14%, 63%);
+    --Dark-grayish-blue: hsl(219, 12%, 42%);
+    --Very-dark-blue: hsl(224, 21%, 14%);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+main {
+    width: 32.5rem;
+    margin: auto;
+    background-color: var(--White);
+}
+
+main a {
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 5rem;
+}
+
+header > p {
+    font-size: 1.8rem;
+}
+
+header span {
+    background-color: var(--Blue);
+    color: white;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    margin-left: 2px;
+    padding: 2px 12px;
+}
+
+#btn {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--Dark-grayish-blue);
+}
+
+#btn:hover {
+    cursor: pointer;
+    color: var(--Blue);
+}
+
+article {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+article > img.avatar {
+    height: 4rem;
+    width: 4rem;
+    margin-left: 1rem;
+}
+
+img.picture {
+    height: 100%;
+    width: 4.0rem;
+    margin-left: 1.5rem;
+    cursor: pointer;
+}
+
+article p {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--Dark-grayish-blue);
+}
+
+article strong {
+    color: var(--Very-dark-blue);
+}
+
+article.unread {
+    background-color: var(--Very-light-grayish-blue);
+    border-radius: 0.5rem;
+}
+
+article.commented  p {
+    width: 75%;
+}
+
+div.conteudo > div.div_commented{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+} 
+
+article:not(.msg) {
+    height: 7.5rem;
+}
+
+article a {
+    color: var(Blue);
+    font-weight: 700;
+}
+
+p em {
+    font-weight: 700;
+    font-style: normal;
+    cursor: pointer;
+}
+
+p em:hover {
+    color: var(--Blue);
+}
+
+div.conteudo {
+    margin-left: 1.5rem;
+}
+
+#Rizky {
+    flex-wrap: wrap;
+}
+
+#Rizky p {
+    width: 25.5rem; /**/
+    margin-left: 1.5rem;
+}
+
+#msg {
+    border: 1px solid var(--Grayish-blue);
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-left: 65px;
+}
+
+#msg:hover {
+    cursor: pointer;
+    background-color: var(--Light-grayish-blue-1);
+}
+
+#msg > p {
+    width: 22.5rem;
+    margin: 1.5rem;
+}
+
+.icon_unread {
+    display: inline-block;
+    background-color: var(--Red);
+    height: 0.7rem;
+    width: 0.7rem;
+    border-radius: 100%;
+    margin-left: 0.5rem;
+}

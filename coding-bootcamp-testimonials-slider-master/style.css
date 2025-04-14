@@ -1,0 +1,87 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+:root {
+--Dark-Blue: hsl(240, 38%, 20%);
+--Grayish-Blue: hsl(240, 18%, 77%);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#divTanya, #divJohn {
+    width: 375px;
+    margin: auto;
+}
+
+section.img {
+    height: 375px;
+    background: white url(images/pattern-bg.svg) no-repeat center / contain;
+}
+
+section.img > img {
+    display: block;
+    height: 275px;
+    width: 275px;
+    border-radius: 10px;
+    box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.205);
+
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 21%);
+}
+
+div.buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 80px;
+    padding: 8px;
+    border-radius: 20px;
+    background-color: white;
+
+    position: relative;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.button {
+    cursor: pointer;
+}
+
+.sectionInfo {
+    color: var(--Dark-Blue);
+    text-align: center;
+    width: 350px;
+    font-size: 1.3em;
+    margin: auto
+}
+
+.name {
+    font-weight: bolder;
+    font-size: 0.85em;
+    margin-top: 15px;
+}
+
+.position {
+    color: var(--Grayish-Blue);
+    font-size: 0.85em;
+    margin-bottom: 5px;
+}
+
+.desaparecer {
+    display: none;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1s;
+}
+
+@keyframes fade {
+    from {opacity:.2}
+    to {opacity: 1}
+}

@@ -1,4 +1,0 @@
-Usar o json
-Criar function que atualiza o preço total
-por imgs na tela final
-resetar a pag

@@ -78,11 +78,6 @@ buttom.addEventListener("click", (evt) => {
          input_day.previousElementSibling.previousElementSibling.classList.add("special_date2") 
          result_day.innerHTML = `<span>- -</span> days`   
      }
-
-    console.log(year)
-    console.log(month)
-    console.log(day)
-
 })
 
 //Add navegação
