@@ -1,0 +1,35 @@
+@media (750px <= width) {
+    body {
+        background-color: hsl(211, 68%, 94%);
+    }
+
+    main {
+        position: absolute;
+        height: auto;
+        width: 50vw;
+        border-radius: 10px;
+
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+    }
+
+    header, section {
+        width: 45vw;
+        margin: auto !important;
+    }
+
+    div.conteudo {
+        width: 100%;
+    }
+
+    #msg {
+        width: 80%;
+    }
+
+    #msg p {
+        width: 90%;
+        margin: 1.5rem auto !important;
+    }
+}
