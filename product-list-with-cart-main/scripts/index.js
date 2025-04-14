@@ -214,7 +214,7 @@ const info = (endPoint, section) => {
             location.reload();
           });
 
-          function quantityChecker_2 () {  //declarar aqui e chamar em cima passando parametro 
+          function quantityChecker_2 () {
             if (quantity_items === 0) {
               btn.classList.remove("ative");
               btn.classList.add("inative");
@@ -243,18 +243,18 @@ const info = (endPoint, section) => {
               p.textContent = `Your added items will appear here`;
               cart.appendChild(p);
 
-              remove_children();
+              remove_children(cart);
               order_total = 0;
             }
           };
           quantityItensCart()
 
-          function creatingTotalOrderDiv(product) {
+          function creatingTotalOrderDiv() {
             let div_ord_tot = document.createElement("div");
             div_ord_tot.id = "div_tot";
             div_ord_tot.className = "div_tot";
 
-            if (cart.querySelector("#div_tot")) remove_children();
+            if (cart.querySelector("#div_tot")) remove_children(cart);
 
             let p_ord_tot = document.createElement("p");
             p_ord_tot.id = "p_tot";
@@ -269,13 +269,6 @@ const info = (endPoint, section) => {
 
             cart.appendChild(div_ord_tot);
             carbon_confirmOrder();
-          }
-
-          function remove_children() {
-            cart.querySelector("#div_tot").remove();
-            cart.children.div_msg_carbon.remove();
-            cart.children.confirm_order.remove();
-            cart.children.margin.remove();
           }
 
           function decrementOrIncrement(
@@ -298,85 +291,92 @@ const info = (endPoint, section) => {
 
             quantityChecker();
 
-            // Atualizando valor total
             operation == "increment"
               ? (order_total += product.product_price)
               : (order_total = order_total - product.product_price);
             creatingTotalOrderDiv();
           }
 
-          function carbon_confirmOrder() {
-            const div_msg_carbon = document.createElement("div");
-            div_msg_carbon.id = "div_msg_carbon";
-            div_msg_carbon.className = "div_msg_carbon";
-
-            const img_carbon = document.createElement("img");
-            img_carbon.src = "assets/images/icon-carbon-neutral.svg";
-            img_carbon.id = "img_carbon";
-
-            const p_carbon = document.createElement("p");
-            p_carbon.textContent = "This is a carbon-neutral delivery";
-
-            div_msg_carbon.appendChild(img_carbon);
-            div_msg_carbon.appendChild(p_carbon);
-
-            cart.appendChild(div_msg_carbon);
-
-            const btn_confirmOrder = document.createElement("div");
-            btn_confirmOrder.id = "confirm_order";
-            btn_confirmOrder.className = "confirm_order";
-            btn_confirmOrder.textContent = "Confirm Order";
-
-            cart.appendChild(btn_confirmOrder);
-
-            let margin = document.createElement("p");
-            margin.id = "margin";
-            margin.className = "margin";
-
-            cart.appendChild(margin);
-
-            btn_confirmOrder.addEventListener("click", () => {
-              const background = document.getElementById("background");
-              background.style.width = "100vw";
-              background.style.height = "100vh";
-              background.style.overflow = "auto";
-            
-              const msg_box_orders = document.getElementById("msg_box_orders");
-              const pedidos = [...document.getElementsByClassName("div_order")];
-              pedidos.forEach((pedido) => {
-                const btn_remove1 = document.getElementById("btn_remove");
-                btn_remove1.remove();
-                
-                const div_item = document.createElement("div");
-                div_item.className = "div_item";
-                
-                const img_pedido = document.createElement("img");
-                
-                let nome_pedido = pedido.firstChild.firstChild.textContent;
-                
-                addProductImage(nome_pedido, img_pedido, pedido, div_item);
-
-                msg_box_orders.appendChild(div_item);
-              });
-
-              function addProductImage(nome_pedido, img_pedido, pedido, div_item) {
-                const semAcentos = nome_pedido.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-                const formatado = semAcentos.replace(/\s+/g, "-").toLowerCase();
-            
-                console.log(formatado)
-                img_pedido.src = `./assets/images/image-${formatado}-thumbnail.jpg`;
-                div_item.appendChild(img_pedido);
-                div_item.appendChild(pedido);
-              }
-
-              const orderTotal_value = document.getElementById("div_tot");
-              msg_box_orders.appendChild(orderTotal_value);
-            });
-          }
         });
       });
     });
 };
 
 info(endPoint, section);
+
+function carbon_confirmOrder() { // Opção de finalizar pedido.
+  const div_msg_carbon = document.createElement("div");
+  div_msg_carbon.id = "div_msg_carbon";
+  div_msg_carbon.className = "div_msg_carbon";
+
+  const img_carbon = document.createElement("img");
+  img_carbon.src = "assets/images/icon-carbon-neutral.svg";
+  img_carbon.id = "img_carbon";
+
+  const p_carbon = document.createElement("p");
+  p_carbon.textContent = "This is a carbon-neutral delivery";
+
+  div_msg_carbon.appendChild(img_carbon);
+  div_msg_carbon.appendChild(p_carbon);
+
+  cart.appendChild(div_msg_carbon);
+
+  const btn_confirmOrder = document.createElement("div");
+  btn_confirmOrder.id = "confirm_order";
+  btn_confirmOrder.className = "confirm_order";
+  btn_confirmOrder.textContent = "Confirm Order";
+
+  cart.appendChild(btn_confirmOrder);
+
+  let margin = document.createElement("p");
+  margin.id = "margin";
+  margin.className = "margin";
+
+  cart.appendChild(margin);
+
+  btn_confirmOrder.addEventListener("click", () => {
+    const background = document.getElementById("background");
+    background.style.width = "100vw";
+    background.style.height = "100vh";
+    background.style.overflow = "auto";
+  
+    const msg_box_orders = document.getElementById("msg_box_orders");
+    const pedidos = [...document.getElementsByClassName("div_order")];
+    pedidos.forEach((pedido) => {
+      const btn_remove1 = document.getElementById("btn_remove");
+      btn_remove1.remove();
+      
+      const div_item = document.createElement("div");
+      div_item.className = "div_item";
+      
+      const img_pedido = document.createElement("img");
+      
+      let nome_pedido = pedido.firstChild.firstChild.textContent;
+      
+      addProductImage(nome_pedido, img_pedido, pedido, div_item);
+
+      msg_box_orders.appendChild(div_item);
+    });
+
+    function addProductImage(nome_pedido, img_pedido, pedido, div_item) {
+      const semAcentos = nome_pedido.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      const formatado = semAcentos.replace(/\s+/g, "-").toLowerCase();
+  
+      console.log(formatado)
+      img_pedido.src = `./assets/images/image-${formatado}-thumbnail.jpg`;
+      div_item.appendChild(img_pedido);
+      div_item.appendChild(pedido);
+    }
+
+    const orderTotal_value = document.getElementById("div_tot");
+    msg_box_orders.appendChild(orderTotal_value);
+  });
+}
+
+function remove_children(cart) {
+  cart.querySelector("#div_tot").remove();
+  cart.children.div_msg_carbon.remove();
+  cart.children.confirm_order.remove();
+  cart.children.margin.remove();
+}
 // tirar o reload.
