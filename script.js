@@ -31,11 +31,9 @@ function validar () {
         verifica_erro(name)
      } else { // Tem um erro
         cria_msg_erro(name)
-
         name.classList.add("error")
         isValid = false
-     
-         const msg_error = name.parentNode.querySelector(".msg_e");
+        const msg_error = name.parentNode.querySelector(".msg_e");
      
          if (name.value == "") {
              msg_error.innerHTML = "can't be blank";
@@ -51,7 +49,6 @@ function validar () {
         cria_msg_erro(number)
         number.classList.add("error")
         isValid = false
-
         const msg_error = number.parentNode.querySelector(".msg_e");
 
         if (number.value.length < 19) {
