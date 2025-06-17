@@ -129,23 +129,47 @@ input::placeholder{
 
 #date_cvc {
     display: flex;
+    margin-top: 25px;
+}
+
+#div-1, #div-2 {
+    width: 50%;
+}
+
+#div-1 {
+    display: grid;
+    grid-template-areas: 
+    "MMYY MMYY"
+    "MM YY";
+}
+
+#div-1 input {
     width: 100%;
-    margin-top: 24.5px;
 }
 
-#div-1 /*,#div-2*/ {
-    width: 45%;
+#div-1 > label {
+    grid-area: MMYY;
+    margin: 0px;
 }
 
-#div-2 {
-    width: 55%;
+.div_month {
+    width: 80%;
+    grid-area: MM;
+    font-size: 0.85em;
 }
 
-.month_year {
-    width: 30%;
+.div_year {
+    width: 80%;
+    grid-area: YY;
+    font-size: 0.85em;
 }
 
-#i_cvc {
+#div-2 .msg_e {
+    font-size: 0.75em;
+    font-weight: 500;
+}
+
+#i_cvc  {
     width: calc(100% - 17px);
 }
 
@@ -194,3 +218,35 @@ div#comp_state > img, div#comp_state h1, div#comp_state p {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+/* #date_cvc {
+    display: flex;
+    flex-direction: row;
+    border:  1px solid red;
+    width: 100%;
+    margin-top: 24.5px;
+    height: 80px;
+}
+
+.x{
+    width: 80px;
+}
+
+#div-1  {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#div-2 {
+    width: 55%;
+}
+
+.month_year {
+    width: 30%;
+}
+
+#i_cvc {
+    width: calc(100% - 17px);
+} */

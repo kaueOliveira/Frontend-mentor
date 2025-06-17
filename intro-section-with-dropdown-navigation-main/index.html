@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style/style.css" />
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="images/logo.svg" alt="Snap" />
+      <img src="images/icon-menu.svg" alt="Menu" id="open-menu" />
+      <div id="header-nav">
+        <div id="div-close-menu">
+          <img
+            src="images/icon-close-menu.svg"
+            alt="Icon Close Menu"
+            id="close-menu"
+          />
+        </div>
+        <nav id="main-navigation" aria-label="Navegação principal">
+          <ul id="main-list">
+            <li id="link-features" class="nav-link">
+              <a href="">Features</a>
+              <img
+                src="images/icon-arrow-down.svg"
+                alt="arrow down"
+                id="features-arrow-down"
+              />
+            </li>
+            <li id="features-list" >
+              <div >
+                <p><img src="images/icon-todo.svg" alt="Todo List Icon" />Todo List</p>
+                <p><img src="images/icon-calendar.svg" alt="Calendar Icon" />Calendar</p>
+                <p><img src="images/icon-reminders.svg" alt="Reminder Icon" />Reminders</p>
+                <p><img src="images/icon-planning.svg" alt="Planning Icon" />Planning</p>
+              </div>
+            </li>
+            <li id="link-company" class="nav-link">
+              <a href="">Company</a>
+              <img
+                src="images/icon-arrow-down.svg"
+                alt="Down Arrow Icon"
+                id="company-arrow-down"
+              />
+            </li>
+            <li id="company-list">
+              <div>
+                <p>History</p>
+                <p>Our Team</p>
+                <p>Blog</p>
+              </div>
+            </li>
+            <li id="link-careers" class="nav-link"><a href="">Careers</a></li>
+            <li id="link-about" class="nav-link"><a href="">About</a></li>
+          </ul>
+        </nav>
+        <nav id="user-access" aria-label="Acesso do usuário">
+          <a href="">Login</a>
+          <a href="">Register</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div id="Bg-image">
+        
+      </div>
+      <section>
+        <h1>Make remote work</h1>
+        <p>
+          Get your team in sync, no matter your location. Streamline processes,
+          create team rituals, and watch productivity soar.
+        </p>
+        <button>Learn more</button>
+        <div id="brands">
+          <img src="images/client-databiz.svg" alt="Databiz Icon" />
+          <img src="images/client-audiophile.svg" alt="Audiophile Icon" />
+          <img src="images/client-meet.svg" alt="Client Meet Icon" />
+          <img src="images/client-maker.svg" alt="Client Maker Icon" />
+        </div>
+      </section>
+    </main>
+    <div id="background"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
