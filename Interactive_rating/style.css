@@ -10,114 +10,151 @@
     --Grey: hsl(217, 12%, 63%);
     --Blue: hsl(213, 19%, 18%);
     --Dark-Blue: hsl(216, 12%, 8%);
+    --Light-Blue:  hsl(213, 20%, 23%);
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
     background-color: var(--Dark-Blue);
 }
 
-div#principal {
+#container, #container-thank-you {
     position: absolute;
 
     background-color: var(--Blue);
-    width: 340px;
-    border-radius: 15px;
+    width: 34rem;
+    border-radius: 2rem;
    
     left: 50%;
     top: 50%;
     transform:translate(-50%, -50%);
 }
 
-div#principal > img {
-    background-color: hsla(216, 12%, 8%, 0.384);
+#card-header {
+    width: 85%;
+    margin: 2.5rem auto;
+}
+
+#star-image {
+    background-color: var(--Light-Blue);
     border-radius: 100%;
-    padding: 10px;
-
-    margin: 22px 5px 8px 25px; 
+    padding: 1rem;
 }
 
-div#principal > h1 {
-    color: white;
-    font-size: 22px;
-    font-weight: normal;
-
-    margin: 4px 5px 8px 25px;
+#card-header > h1 {
+    color: var(--White);
+    font-size: 2.1rem;
+    font-weight: 600;
+    margin: 1rem 0rem;
 }
 
-div#principal > p {
+#card-header > p {
     color: var(--Grey);
-    font-size: 15px;
-    line-height: 1.2em;
-
-    margin: 10px 25px 75px 25px;
+    font-size: 1.3rem;
+    font-weight: 550;
+    line-height: 1.4em;
 }
 
-div#principal > div {
+#button-list {
+    width: 85%;
+    margin: auto;
+}
+
+ol {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    list-style: none;
     color: var(--Grey);
 }
 
-div#q {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform:translate(-45%, 205%);
-    width: 100%;
-}
-
-div#q > div.btn {
-    display: inline;
-    text-align: center;
-    background-color: hsla(216, 12%, 8%, 0.384);
-
-    
-    border-radius: 50px;
-    padding: 10px 14px 10px 14px;
-
-    margin-right: 10px;
-    margin-left: 10px;   
-}
-
-/* div.btn:hover {
-    background-color: var(--primary-color);
+li {
+    background-color: var(--Light-Blue);
+    border-radius: 50%;
+    font-size: 1.3rem;
+    font-weight: 550;
+    padding: 1.2rem 1.4rem;
     cursor: pointer;
-}*/
+}
 
-div > input[type=submit] {
-    display: block;
-    font-weight: bold;
+li:hover {
+    background-color: var(--primary-color);
+    color: var(--Blue);
+}
+
+li:focus {
+    background-color: var(--White);
+}
+
+#submit-button {
     color: var(--Blue);
     background-color: var(--primary-color);
-    border-radius: 20px;
-    width: 290px;
-    height: 40px;
+
+    width: 85%;
+    height: 4rem;
+    margin: 2.5rem auto;
+    font-weight: 550;
+
+    display: block;
     border: none;
+    border-radius: 1.8rem;
+}
+
+#submit-button:hover {
+    background-color: var(--White);
+}
+
+/* ------------------------------- */
+
+.clicked {
+    background-color: var(--White);
+}
+
+#container-thank-you {
+    display: none;
+}
+
+#container-thank-you > img {
+    height: 9rem;
+    display: block;
+    margin: 3rem auto;
+}
+
+#mensage {
+    color: var(--primary-color);
+    background-color: var(--Light-Blue);
+
+    width: 13.5rem;
     margin: auto;
-    margin-top: 10px;
-    margin-bottom: 30px;
-    padding: 8px;
-}
+    padding: 0.5rem 0.75rem;
+    border-radius: 1rem;
 
-div > input[type=submit]:hover {
-    background-color: white;
-    cursor: pointer;
-}
-
-.selecionado {
-    display: inline;
+    font-size: 1.2rem;
     text-align: center;
-    background-color:var(--primary-color) !important;
-    color: var(--Dark-Blue) !important;
-
-    
-    border-radius: 50px;
-    padding: 10px 14px 10px 14px;
-
-    margin-right: 10px;
-    margin-left: 10px;   
 }
 
-.hoo {
-    background-color: white !important;
-    color: var(--Blue) !important; 
-    cursor: pointer;
+#container-thank-you > h1 {
+    color: var(--White);
+    
+    font-size: 2.2rem;
+    font-weight: normal;
+    text-align: center;
+
+    margin: 2rem;
+}
+
+#container-thank-you > p:not(#mensage) {
+    color: var(--Grey);
+
+    font-size: 1.45rem;
+    line-height: 1.4em;
+    text-align: center;
+
+    width: 85%;
+    margin: 0rem auto 3rem;
 }
