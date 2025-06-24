@@ -1,0 +1,76 @@
+@media (1440px <= width) {
+  #container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: min-content !important;
+    height: fit-content !important;
+
+    display: grid !important;
+    grid-template-areas:
+      "daniel daniel jonathan kira"
+      "jeanette patrick patrick kira";
+    gap: 2rem;
+  }
+
+  .div-testimony:not(#kira-testimony) {
+    height: 300px !important;
+    margin: 0 !important;
+  }
+
+  #daniel-testimony,
+  #patrick-testimony {
+    width: 542px !important;
+  }
+
+  #jonathan-testimony,
+  #jeanette-testimony,
+  #kira-testimony {
+    width: 266px !important;
+  }
+
+  #daniel-testimony {
+    background: url(../images/bg-pattern-quotation.svg) top right no-repeat;
+    grid-area: daniel;
+  }
+
+  #jonathan-testimony {
+    grid-area: jonathan;
+  }
+
+  #jeanette-testimony {
+    grid-area: jeanette;
+  }
+  
+  #patrick-testimony {
+    grid-area: patrick;
+  }
+
+  #kira-testimony {
+    grid-area: kira;
+    height: calc(600px + 2rem) !important;
+    margin: 0 !important;
+  }
+  
+  :is(#jeanette-testimony, #jonathan-testimony) > :is(header, h1, p) {
+    width: 69.44%;
+  }
+
+  #kira-testimony > :is(header, h1, p) {
+    width: 80%;
+  }
+
+  .header-testimony {
+    margin-top: 2rem !important;
+  }
+
+  .div-testimony > h1 {
+    margin: 1.5rem auto !important;
+  }
+
+  .div-testimony > p {
+    margin-bottom: 2rem !important;
+  }
+}

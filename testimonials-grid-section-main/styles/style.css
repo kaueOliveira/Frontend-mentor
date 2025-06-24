@@ -1,0 +1,136 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+.barlow-semi-condensed-medium {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.barlow-semi-condensed-semibold {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+:root {
+  --Moderate-violet: hsl(263, 55%, 52%);
+  --Bg-violet: hsla(263, 71%, 70%, 0.849);
+  --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --White: hsl(0, 0%, 100%);
+
+  --Light-gray: hsl(0, 0%, 81%);
+  --Light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--Light-grayish-blue);
+}
+
+#container {
+  width: 32.5rem;
+  margin: auto;
+
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.div-testimony {
+  width: 100%;
+  margin: 2rem 0rem;
+  border-radius: 1rem;
+  box-shadow: 30px 20px 90px rgba(0, 0, 0, 0.397);
+}
+
+.header-testimony {
+  width: 85%;
+  margin: 2.5rem auto 0em;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header-testimony > img {
+  height: 3.25rem;
+  border-radius: 100%;
+}
+
+.header-testimony > div {
+  margin-left: 1.2rem;
+}
+
+.name{
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.graduation {
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+.div-testimony > h1 {
+  width: 85%;
+  margin: 1.75rem auto;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.div-testimony > p {
+  width: 85%;
+  margin: 0rem auto 2.5rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+#daniel-testimony {
+  color: var(--Light-gray);
+  background-color: var(--Moderate-violet);
+}
+
+#daniel-testimony img, #patrick-testimony img {
+  border: 2px solid var(--Bg-violet);
+}
+
+#daniel-testimony > h1, #jonathan-testimony > h1 {
+  color: var(--White);
+}
+
+#jonathan-testimony {
+  color: var(--Light-gray);
+  background-color: var(--Very-dark-grayish-blue);
+  height: 26.5rem;
+}
+
+#jonathan-testimony img {
+  border: 2px solid var(--Light-gray);
+}
+
+#jeanette-testimony, #kira-testimony {
+  color: var(--Very-dark-grayish-blue);
+  background-color: var(--White);
+}
+
+#jeanette-testimony > h1 {
+  color: var(--Very-dark-blackish-blue);
+}
+
+#patrick-testimony {
+  color: var(--Light-gray);
+  background-color: var(--Very-dark-blackish-blue);
+}
+
+#kira-testimony > h1 {
+  color: var(--Very-dark-blackish-blue);
+}
