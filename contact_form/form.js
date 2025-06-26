@@ -1,59 +1,52 @@
-const nome = document.getElementById("iname");
-const last = document.getElementById("ilast");
-const email = document.getElementById("iemail");
-const general = document.getElementById("igeneral");
-const support = document.getElementById("isupport");
-const caixa = document.getElementById("ibox");
+const firstName = document.getElementById("input-first-name");
+const lastName = document.getElementById("input-last-name");
+const email = document.getElementById("input-email");
+const message = document.getElementById("message-area");
+const button = document.getElementById("button");
+const form = document.getElementById("contact-form");
 
-// Adiciona evento de teclado para cada campo de entrada
-nome.addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-        event.preventDefault();
-        last.focus();
-    }
+let isValid = true;
+
+button.addEventListener("click", () => {
+  isEmpty(firstName);
+  onlyLetters(firstName);
+  isEmpty(lastName);
+  onlyLetters(lastName);
+  isEmpty(email);
+  isEmpty(message);
+
+  if (isValid) {
+    window.alert("Formulario Enviado");
+  } else {
+    window.alert(
+      "Error: Check if the red fields are empty or if there are numbers in the name fields"
+    );
+  }
 });
 
-last.addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-        event.preventDefault();
-        email.focus();
-    }
-});
+function isEmpty(input) {
+  if (input.value.trim() === "") {
+    input.classList.add("error");
+    isValid = false;
+  } else if (input.classList.contains("error")) {
+    input.classList.remove("error");
+    isValid = true;
+  }
+  return isValid;
+}
 
-email.addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-        event.preventDefault();
-        general.focus();
-    }
-});
+function onlyLetters(input) {
+  const onlyLetters = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
+  if (!onlyLetters.test(input.value)) {
+    input.classList.add("error");
+    isValid = false;
+  } else if (input.classList.contains("error")) {
+    input.classList.remove("error");
+    isValid = true;
+  }
+  return isValid;
+}
 
-general.addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-        event.preventDefault();
-        support.focus();
-    }
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
 });
-
-support.addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-        event.preventDefault();
-        caixa.focus();
-    }
-});
-
-// Adiciona evento de teclado para a caixa de seleção
-caixa.addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-        event.preventDefault();
-        btn.focus(); // Move o foco para o botão de envio
-    }
-});
-
-// Adiciona evento de teclado para o botão de envio
-btn.addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-        event.preventDefault();
-        btn.click(); // Simula o clique no botão de envio
-    }
-});
-//Esse código é apenas para estudo !

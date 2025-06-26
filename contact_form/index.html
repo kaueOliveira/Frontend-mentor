@@ -1,51 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo/style.css">
-    <link rel="stylesheet" href="estilo/media-query.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/media-query.css" />
     <title>Contact Form</title>
-</head>
-<body>
-    <div id="formulario">
+  </head>
+  <body>
+      <form method="post" autocomplete="off" id="contact-form">
         <h1>Contact Us</h1>
-        <form  methold="post" autocomplete="off">
+        <div id="full-name">
+          <div class="fields" id="first-name">
+            <label for="input-first-name">First Name <span>*</span><br /></label>
+            <input type="text" name="first_name" id="input-first-name"/>
+          </div>
+          <div class="fields" id="last-name">
+            <label for="input-last-name">Last Name <span>*</span><br /></label>
+            <input type="text" name="last_name" id="input-last-name"/>
+          </div>
+        </div>
 
-            <div id="full_name">
-                <p class="fn1"><label for="iname">First Name *<br></label>
-                <input type="text" name="name" id="iname" required></p>
-                <p class="fn2"><label for="ilast">Last Name *<br></label>
-                <input type="text" name="last" id="ilast" required></p>
-            </div>    
-            
-            <div id="e_mail">
-                <p class="fn3"><label for="iemail">Email Address *<br></label>
-                <input type="email" name="email" id="iemail" required></p>
-            </div>
+        <div class="fields" id="email">
+          <label for="input-email">Email Address <span>*</span><br /></label>
+          <input type="email" name="email" id="input-email"/>
+        </div>
 
-            
-            <div id="radio_section">
-                <legend>Query Type *</legend>
-                <p class="rb"><input type="radio" name="dev" id="igeneral" required> <label for="ifull">General Enquiry</label></p>
-                <p class="rb"><input type="radio" name="dev" id="isupport" required> <label for="ifront">Support Request</label></p>
-            </div>
-            
-            
-            <div id="msgl">
-                <label for="imsg">Message *</label><br>
-                <textarea name="msg" id="imsg"></textarea>
-            </div>
+        <fieldset id="query-type">
+          <legend>Query Type <span>*</span></legend>
+          <div>
+            <input type="radio" name="query_type" id="query-general" required />
+            <label for="query-general">General Enquiry</label>
+          </div>
 
-            <div id="check">
-                <P><input type="checkbox" name="box" id="ibox" required> <label for="ibox">I consent to being contacted by the team *</label></P>
-            </div>
-            
-            <div id="buttom">
-                <p><input type="submit" value="Submit" id="btn"></p>
-            </div>
-        </form>
-    </div>
-    <script src="formB.js"></script>       
-</body>
+          <div>
+            <input type="radio" name="query_type" id="query-support" required />
+            <label for="query-support">Support Request</label>
+          </div>
+        </fieldset>
+
+        <div id="message">
+          <label for="message-area">Message <span>*</span></label><br />
+          <textarea name="message" id="message-area"></textarea>
+        </div>
+
+        <div id="check">
+          <input type="checkbox" id="consent" required />
+          <label for="consent">I consent to being contacted by the team <span>*</span></label>
+        </div>
+
+        <input type="submit" value="Submit" id="button" />
+      </form>
+    <script src="form.js"></script>
+    <script src="key-board-events.js"></script>
+  </body>
 </html>

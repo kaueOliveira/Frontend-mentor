@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+@media screen and (min-width: 900px) {
+    form {
+        width: 45%;
+        height: 60rem;
+        margin: 0rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #full-name, #query-type{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #full-name > div, #query-type > div  {
+        width: 49%;
+    }
+
+    #first-name {
+        margin: 0;
+    }
+
+    #query-type {
+        height: 7rem;
+        flex-flow: row wrap;
+        align-items: center;
+    }
+
+    legend {
+        width: 100%;
+    }
+
+    #query-type > div > input {
+        margin: 0rem 1rem;
+    }
+
+    textarea {
+        height: 7rem;
+    }
+
+    #check {
+        justify-content: flex-start;
+    }
+
+    #check > input {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    #check > label {
+        margin-left: 2rem;
+    }
+}
